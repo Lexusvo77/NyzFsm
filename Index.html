@@ -1,0 +1,3859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<title>Nyx.shop</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f7f5;
+  color:#111;
+}
+
+button,input,textarea,select{font-family:inherit}
+button{cursor:pointer}
+img{max-width:100%;display:block}
+
+.topbar{
+  background:#050505;
+  color:#fff;
+  text-align:center;
+  padding:10px 15px;
+  font-size:12px;
+  letter-spacing:1.5px;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #e8e8e8;
+}
+
+.nav{
+  max-width:1250px;
+  height:72px;
+  margin:auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.navlinks{
+  display:flex;
+  gap:26px;
+  list-style:none;
+}
+
+.navlinks a{
+  color:#111;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.navactions{
+  display:flex;
+  gap:9px;
+}
+
+.icon{
+  width:42px;
+  height:42px;
+  border:1px solid #ddd;
+  background:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+.cartbadge{
+  position:absolute;
+  margin-top:-30px;
+  margin-left:25px;
+  width:18px;
+  height:18px;
+  background:#000;
+  color:#fff;
+  border-radius:50%;
+  font-size:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* HERO */
+
+.hero{
+  min-height:680px;
+  position:relative;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:50px 20px;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.65)
+  );
+}
+
+.heroContent{
+  position:relative;
+  max-width:850px;
+}
+
+.heroSmall{
+  font-size:11px;
+  letter-spacing:5px;
+}
+
+.hero h1{
+  font-size:clamp(48px,9vw,95px);
+  letter-spacing:7px;
+  margin:20px 0;
+}
+
+.hero p{
+  font-size:17px;
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+.btn{
+  border:0;
+  background:#050505;
+  color:#fff;
+  padding:14px 23px;
+  font-size:12px;
+  letter-spacing:1px;
+  transition:.2s;
+}
+
+.btn:hover{opacity:.78}
+
+.btnWhite{
+  background:#fff;
+  color:#000;
+}
+
+.btnOutline{
+  background:white;
+  color:#111;
+  border:1px solid #111;
+}
+
+.btnDanger{
+  background:#a40000;
+}
+
+.btnGreen{
+  background:#087d2b;
+}
+
+.disabled{
+  background:#ccc!important;
+  color:#666!important;
+  cursor:not-allowed;
+}
+
+/* SECTIONS */
+
+section{
+  padding:80px 20px;
+}
+
+.container{
+  max-width:1250px;
+  margin:auto;
+}
+
+.heading{
+  text-align:center;
+  margin-bottom:42px;
+}
+
+.heading span{
+  font-size:10px;
+  letter-spacing:4px;
+  color:#888;
+}
+
+.heading h2{
+  font-size:35px;
+  margin-top:10px;
+}
+
+/* PROMO */
+
+.promo{
+  background:#0a0a0a;
+  color:#fff;
+  text-align:center;
+}
+
+.promo h2{
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.promo p{
+  color:#bbb;
+}
+
+/* PRODUCTS */
+
+.categories{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:35px;
+}
+
+.category{
+  padding:10px 17px;
+  border:1px solid #ddd;
+  background:#fff;
+  border-radius:30px;
+}
+
+.category.active{
+  background:#000;
+  color:#fff;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid #eee;
+  overflow:hidden;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.cardImg{
+  height:350px;
+  position:relative;
+  background:#eee;
+}
+
+.cardImg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.badge{
+  position:absolute;
+  left:12px;
+  top:12px;
+  background:#000;
+  color:#fff;
+  padding:7px 10px;
+  font-size:9px;
+  letter-spacing:1px;
+}
+
+.badgeSold{
+  background:#a40000;
+}
+
+.cardInfo{
+  padding:18px;
+}
+
+.cardCat{
+  color:#888;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.cardName{
+  font-size:18px;
+  margin:7px 0;
+}
+
+.cardDesc{
+  color:#777;
+  font-size:12px;
+  line-height:1.5;
+  min-height:38px;
+}
+
+.price{
+  font-size:18px;
+  font-weight:bold;
+  margin:14px 0;
+}
+
+.cardButtons{
+  display:flex;
+  gap:7px;
+}
+
+.cardButtons button{
+  flex:1;
+}
+
+/* GALLERY */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.galleryItem{
+  height:260px;
+  overflow:hidden;
+  background:#ddd;
+}
+
+.galleryItem img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.3s;
+}
+
+.galleryItem:hover img{
+  transform:scale(1.05);
+}
+
+/* INFO */
+
+.infoGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.info{
+  background:#fff;
+  border:1px solid #eee;
+  padding:30px;
+  text-align:center;
+}
+
+.infoIcon{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.info h3{
+  margin-bottom:10px;
+}
+
+.info p{
+  color:#777;
+  line-height:1.6;
+  font-size:13px;
+}
+
+/* SOCIAL */
+
+.social{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:18px;
+}
+
+.social a{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:bold;
+  font-size:20px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#000;
+  color:#fff;
+  padding:50px 20px;
+}
+
+.footer{
+  max-width:1250px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+
+.footerLogo{
+  font-size:25px;
+  letter-spacing:3px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.footer p,.footer a{
+  color:#999;
+  font-size:13px;
+  line-height:2;
+  text-decoration:none;
+  display:block;
+}
+
+.copyright{
+  max-width:1250px;
+  margin:35px auto 0;
+  padding-top:20px;
+  border-top:1px solid #333;
+  color:#666;
+  font-size:11px;
+}
+
+/* MODALS */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:3000;
+  background:rgba(0,0,0,.7);
+  padding:15px;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal.open{
+  display:flex;
+}
+
+.modalBox{
+  width:min(720px,100%);
+  max-height:92vh;
+  overflow:auto;
+  background:#fff;
+  padding:30px;
+  position:relative;
+  border-radius:8px;
+}
+
+.modalLarge{
+  width:min(1050px,100%);
+}
+
+.close{
+  position:absolute;
+  right:15px;
+  top:10px;
+  border:0;
+  background:none;
+  font-size:28px;
+}
+
+.modalTitle{
+  font-size:26px;
+  margin-bottom:25px;
+}
+
+/* DETAIL */
+
+.detail{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.detailImage{
+  height:500px;
+  background:#eee;
+}
+
+.detailImage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.thumbs{
+  display:flex;
+  gap:7px;
+  overflow:auto;
+  margin-top:10px;
+}
+
+.thumb{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border:2px solid transparent;
+  cursor:pointer;
+}
+
+.thumb.active{
+  border-color:#000;
+}
+
+.detail h2{
+  font-size:32px;
+  margin:10px 0;
+}
+
+.detailPrice{
+  font-size:24px;
+  font-weight:bold;
+  margin:20px 0;
+}
+
+.detailDesc{
+  color:#666;
+  line-height:1.7;
+}
+
+.specs{
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  line-height:1.7;
+}
+
+/* CART */
+
+.cartItem{
+  display:flex;
+  gap:14px;
+  padding:15px 0;
+  border-bottom:1px solid #eee;
+}
+
+.cartItem img{
+  width:80px;
+  height:90px;
+  object-fit:cover;
+}
+
+.cartInfo{
+  flex:1;
+}
+
+.quantity{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-top:8px;
+}
+
+.quantity button{
+  width:28px;
+  height:28px;
+  border:1px solid #ddd;
+  background:#fff;
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  border-top:1px solid #ddd;
+  padding-top:20px;
+  margin-top:20px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* FORMS */
+
+.formGroup{
+  margin-bottom:15px;
+}
+
+.formGroup label{
+  display:block;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:6px;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  outline:none;
+}
+
+.formGroup textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.formGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+/* PAYMENT */
+
+.paymentMethods{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-bottom:15px;
+}
+
+.paymentMethod{
+  border:1px solid #ddd;
+  background:#fff;
+  padding:14px 8px;
+  text-align:center;
+  font-size:12px;
+}
+
+.paymentMethod.active{
+  background:#000;
+  color:#fff;
+}
+
+.paymentInfo{
+  background:#f4f4f4;
+  padding:16px;
+  margin-bottom:15px;
+  line-height:1.6;
+  font-size:13px;
+}
+
+.recurrenteBtn{
+  width:100%;
+  margin-top:10px;
+  background:#000;
+  color:#fff;
+  padding:15px;
+  border:0;
+  font-weight:bold;
+}
+
+/* ADMIN */
+
+.adminTabs{
+  display:flex;
+  gap:7px;
+  overflow:auto;
+  margin-bottom:25px;
+}
+
+.adminTab{
+  border:1px solid #ddd;
+  background:#fff;
+  padding:10px 15px;
+  white-space:nowrap;
+}
+
+.adminTab.active{
+  background:#000;
+  color:#fff;
+}
+
+.adminSection{
+  display:none;
+}
+
+.adminSection.active{
+  display:block;
+}
+
+.adminProduct{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border:1px solid #eee;
+  margin-bottom:9px;
+}
+
+.adminProduct img{
+  width:65px;
+  height:65px;
+  object-fit:cover;
+}
+
+.adminProductInfo{
+  flex:1;
+}
+
+.adminActions{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+}
+
+.adminActions button{
+  padding:8px;
+  border:1px solid #ddd;
+  background:#fff;
+}
+
+.statusAvailable{
+  color:#087d2b;
+  font-size:11px;
+}
+
+.statusSold{
+  color:#a40000;
+  font-size:11px;
+}
+
+/* ADMIN GALLERY */
+
+.adminGalleryItem{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  border:1px solid #eee;
+  margin-bottom:8px;
+}
+
+.adminGalleryItem img{
+  width:80px;
+  height:80px;
+  object-fit:cover;
+}
+
+.adminGalleryItem div{
+  flex:1;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  z-index:6000;
+  bottom:25px;
+  left:50%;
+  transform:translate(-50%,100px);
+  background:#000;
+  color:#fff;
+  padding:14px 20px;
+  border-radius:5px;
+  opacity:0;
+  transition:.3s;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .products{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .gallery{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+@media(max-width:750px){
+
+  .nav{
+    height:62px;
+  }
+
+  .navlinks{
+    display:none;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  .hero{
+    min-height:580px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .cardImg{
+    height:250px;
+  }
+
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .galleryItem{
+    height:210px;
+  }
+
+  .infoGrid{
+    grid-template-columns:1fr;
+  }
+
+  .footer{
+    grid-template-columns:1fr;
+  }
+
+  .detail{
+    grid-template-columns:1fr;
+  }
+
+  .detailImage{
+    height:380px;
+  }
+
+  .formGrid{
+    grid-template-columns:1fr;
+  }
+
+  .paymentMethods{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:450px){
+
+  section{
+    padding:55px 14px;
+  }
+
+  .products{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .cardImg{
+    height:220px;
+  }
+
+  .cardInfo{
+    padding:12px;
+  }
+
+  .cardName{
+    font-size:15px;
+  }
+
+  .cardButtons{
+    flex-direction:column;
+  }
+
+  .hero h1{
+    letter-spacing:4px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+
+<div class="topbar" id="topbar">
+  ENVÍOS A TODA GUATEMALA
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+<nav class="nav">
+
+  <div class="logo" id="logo">
+    Nyx.shop
+  </div>
+
+  <ul class="navlinks">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#catalogo">Catálogo</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#envios">Envíos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <div class="navactions">
+
+    <button class="icon" onclick="openCart()">
+      🛒
+      <span class="cartbadge" id="cartCount">0</span>
+    </button>
+
+  </div>
+
+</nav>
+
+</header>
+
+
+<!-- INICIO -->
+
+<section class="hero" id="inicio">
+
+  <div class="heroContent">
+
+    <div class="heroSmall">
+      EXCLUSIVIDAD • ESTILO • ELEGANCIA
+    </div>
+
+    <h1 id="heroTitle">
+      Nyx.shop
+    </h1>
+
+    <p id="heroText">
+      Descubre nuestra selección de productos
+      con diseños exclusivos y una experiencia
+      de compra moderna.
+    </p>
+
+    <a href="#catalogo">
+      <button class="btn btnWhite">
+        VER CATÁLOGO
+      </button>
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- PROMOCIONES -->
+
+<section class="promo">
+
+  <h2 id="promoTitle">
+    PROMOCIONES ESPECIALES
+  </h2>
+
+  <p id="promoText">
+    Descubre nuestros productos y novedades.
+  </p>
+
+</section>
+
+
+<!-- CATÁLOGO -->
+
+<section id="catalogo">
+
+<div class="container">
+
+  <div class="heading">
+
+    <span>NUESTRA COLECCIÓN</span>
+
+    <h2>
+      Catálogo
+    </h2>
+
+  </div>
+
+  <div class="categories" id="categories"></div>
+
+  <div class="products" id="products"></div>
+
+</div>
+
+</section>
+
+
+<!-- GALERÍA -->
+
+<section id="galeria">
+
+<div class="container">
+
+  <div class="heading">
+
+    <span>DESCUBRE NUESTRA TIENDA</span>
+
+    <h2>
+      Galería
+    </h2>
+
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+
+</div>
+
+</section>
+
+
+<!-- PAGOS -->
+
+<section>
+
+<div class="container">
+
+  <div class="heading">
+
+    <span>COMPRA FÁCIL Y SEGURA</span>
+
+    <h2>
+      Métodos de pago
+    </h2>
+
+  </div>
+
+  <div class="infoGrid">
+
+    <div class="info">
+      <div class="infoIcon">💳</div>
+      <h3>Tarjeta</h3>
+      <p>
+        Paga mediante Recurrente de forma rápida y sencilla.
+      </p>
+    </div>
+
+    <div class="info">
+      <div class="infoIcon">📲</div>
+      <h3>Depósito bancario</h3>
+      <p id="depositPublic">
+        Consulta nuestras instrucciones de depósito.
+      </p>
+    </div>
+
+    <div class="info">
+      <div class="infoIcon">🏦</div>
+      <h3>Transferencia bancaria</h3>
+      <p id="transferPublic">
+        Consulta nuestras instrucciones de transferencia.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ENVÍOS -->
+
+<section id="envios">
+
+<div class="container">
+
+  <div class="heading">
+
+    <span>ENTREGAMOS TU PEDIDO</span>
+
+    <h2>
+      Envíos
+    </h2>
+
+  </div>
+
+  <div class="infoGrid">
+
+    <div class="info">
+
+      <div class="infoIcon">🚚</div>
+
+      <h3>
+        Cobertura
+      </h3>
+
+      <p id="shippingZones"></p>
+
+    </div>
+
+    <div class="info">
+
+      <div class="infoIcon">💰</div>
+
+      <h3>
+        Costo
+      </h3>
+
+      <p id="shippingCost"></p>
+
+    </div>
+
+    <div class="info">
+
+      <div class="infoIcon">⏱️</div>
+
+      <h3>
+        Entrega
+      </h3>
+
+      <p id="shippingTime"></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section id="contacto">
+
+<div class="container">
+
+  <div class="heading">
+
+    <span>ESTAMOS PARA AYUDARTE</span>
+
+    <h2>
+      Contacto
+    </h2>
+
+  </div>
+
+  <div class="infoGrid">
+
+    <div class="info">
+
+      <div class="infoIcon">
+        📸
+      </div>
+
+      <h3>
+        Instagram
+      </h3>
+
+      <p>
+        Síguenos y contáctanos directamente.
+      </p>
+
+      <div class="social">
+
+        <a
+          id="instagramLink"
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener">
+          ◎
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="info">
+
+      <div class="infoIcon">
+        🎵
+      </div>
+
+      <h3>
+        TikTok
+      </h3>
+
+      <p>
+        Mira nuestras novedades y productos.
+      </p>
+
+      <div class="social">
+
+        <a
+          id="tiktokLink"
+          href="https://www.tiktok.com/"
+          target="_blank"
+          rel="noopener">
+          ♪
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="info">
+
+      <div class="infoIcon">
+        📞
+      </div>
+
+      <h3>
+        Contacto
+      </h3>
+
+      <p id="contactText">
+        Escríbenos para obtener información.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer">
+
+  <div>
+
+    <div class="footerLogo" id="footerLogo">
+      Nyx.shop
+    </div>
+
+    <p>
+      Tienda online de productos de la marca.
+    </p>
+
+  </div>
+
+
+  <div>
+
+    <h3>
+      Navegación
+    </h3>
+
+    <a href="#inicio">Inicio</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#galeria">Galería</a>
+    <a href="#envios">Envíos</a>
+
+  </div>
+
+
+  <div>
+
+    <h3>
+      Redes sociales
+    </h3>
+
+    <a id="footerInstagram" target="_blank">
+      Instagram
+    </a>
+
+    <a id="footerTiktok" target="_blank">
+      TikTok
+    </a>
+
+    <button
+      onclick="openAdminLogin()"
+      style="
+        margin-top:12px;
+        border:0;
+        background:none;
+        color:#555;
+        font-size:10px;
+      ">
+      Administración
+    </button>
+
+  </div>
+
+</div>
+
+
+<div class="copyright">
+
+  © <span id="year"></span>
+  Nyx.shop. Todos los derechos reservados.
+
+</div>
+
+</footer>
+
+
+<!-- DETALLE PRODUCTO -->
+
+<div class="modal" id="productModal">
+
+<div class="modalBox modalLarge">
+
+<button class="close"
+onclick="closeModal('productModal')">
+×
+</button>
+
+<div class="detail">
+
+  <div>
+
+    <div class="detailImage">
+
+      <img id="detailMainImage" src="" alt="">
+
+    </div>
+
+    <div class="thumbs" id="detailThumbs"></div>
+
+  </div>
+
+
+  <div>
+
+    <div class="cardCat"
+    id="detailCategory"></div>
+
+    <h2 id="detailName"></h2>
+
+    <div class="detailPrice"
+    id="detailPrice"></div>
+
+    <div class="detailDesc"
+    id="detailDescription"></div>
+
+    <div class="specs">
+
+      <strong>
+        Especificaciones
+      </strong>
+
+      <p id="detailSpecifications"></p>
+
+    </div>
+
+    <br>
+
+    <button
+      class="btn"
+      id="detailButton"
+      onclick="addDetailToCart()">
+      AGREGAR AL CARRITO
+    </button>
+
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CARRITO -->
+
+<div class="modal" id="cartModal">
+
+<div class="modalBox">
+
+<button class="close"
+onclick="closeModal('cartModal')">
+×
+</button>
+
+<h2 class="modalTitle">
+Carrito de compras
+</h2>
+
+<div id="cartItems"></div>
+
+<div class="total">
+
+  <span>Total</span>
+
+  <span id="cartTotal">
+    Q0.00
+  </span>
+
+</div>
+
+<br>
+
+<button
+class="btn"
+style="width:100%;"
+onclick="openCheckout()">
+
+CONTINUAR AL PAGO
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- CHECKOUT -->
+
+<div class="modal" id="checkoutModal">
+
+<div class="modalBox">
+
+<button class="close"
+onclick="closeModal('checkoutModal')">
+×
+</button>
+
+<h2 class="modalTitle">
+Finalizar pedido
+</h2>
+
+
+<div class="formGrid">
+
+<div class="formGroup">
+
+<label>
+Nombre completo
+</label>
+
+<input
+id="customerName"
+placeholder="Tu nombre">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Teléfono
+</label>
+
+<input
+id="customerPhone"
+placeholder="Tu teléfono">
+
+</div>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Dirección
+</label>
+
+<textarea
+id="customerAddress"
+placeholder="Dirección completa de entrega"></textarea>
+
+</div>
+
+
+<label style="
+font-size:12px;
+font-weight:bold;
+display:block;
+margin-bottom:8px;">
+Método de pago
+</label>
+
+
+<div class="paymentMethods">
+
+<button
+class="paymentMethod active"
+id="payCard"
+onclick="selectPayment('card')">
+
+💳<br>
+Tarjeta
+
+</button>
+
+
+<button
+class="paymentMethod"
+id="payDeposit"
+onclick="selectPayment('deposit')">
+
+📲<br>
+Depósito bancario
+
+</button>
+
+
+<button
+class="paymentMethod"
+id="payTransfer"
+onclick="selectPayment('transfer')">
+
+🏦<br>
+Transferencia
+
+</button>
+
+</div>
+
+
+<div class="paymentInfo"
+id="paymentInfo">
+</div>
+
+
+<button
+class="recurrenteBtn"
+onclick="payRecurrente()">
+
+💳 PAGAR CON RECURRENTE
+
+</button>
+
+
+<div class="formGroup"
+style="margin-top:15px;">
+
+<label>
+Comprobante de pago
+</label>
+
+<input
+type="file"
+id="paymentProof"
+accept="image/*,.pdf">
+
+</div>
+
+
+<button
+class="btn"
+style="width:100%;"
+onclick="sendOrder()">
+
+ENVIAR INFORMACIÓN DEL PEDIDO
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- LOGIN ADMIN -->
+
+<div class="modal" id="adminLoginModal">
+
+<div class="modalBox"
+style="max-width:400px;">
+
+<button class="close"
+onclick="closeModal('adminLoginModal')">
+×
+</button>
+
+<h2
+style="
+text-align:center;
+margin-bottom:25px;">
+ADMINISTRACIÓN
+</h2>
+
+<div class="formGroup">
+
+<label>
+Contraseña
+</label>
+
+<input
+id="adminPassword"
+type="password"
+placeholder="Contraseña">
+
+</div>
+
+<button
+class="btn"
+style="width:100%;"
+onclick="loginAdmin()">
+
+ENTRAR
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PANEL ADMIN -->
+
+<div class="modal" id="adminModal">
+
+<div class="modalBox modalLarge">
+
+<button class="close"
+onclick="logoutAdmin()">
+×
+</button>
+
+<h2 class="modalTitle">
+Panel de administración
+</h2>
+
+
+<div class="adminTabs">
+
+<button
+class="adminTab active"
+onclick="adminTab('products',this)">
+Productos
+</button>
+
+<button
+class="adminTab"
+onclick="adminTab('gallery',this)">
+Galería
+</button>
+
+<button
+class="adminTab"
+onclick="adminTab('design',this)">
+Diseño
+</button>
+
+<button
+class="adminTab"
+onclick="adminTab('shipping',this)">
+Envíos
+</button>
+
+<button
+class="adminTab"
+onclick="adminTab('payments',this)">
+Pagos
+</button>
+
+</div>
+
+
+<!-- ADMIN PRODUCTOS -->
+
+<div
+class="adminSection active"
+id="admin-products">
+
+<button
+class="btn"
+onclick="newProduct()">
+
+➕ AGREGAR PRODUCTO
+
+</button>
+
+<br><br>
+
+<div id="adminProducts"></div>
+
+</div>
+
+
+<!-- ADMIN GALERÍA -->
+
+<div
+class="adminSection"
+id="admin-gallery">
+
+<div class="formGroup">
+
+<label>
+Agregar fotografías
+</label>
+
+<input
+type="file"
+id="galleryFiles"
+accept="image/*"
+multiple>
+
+</div>
+
+<button
+class="btn"
+onclick="uploadGallery()">
+
+AGREGAR IMÁGENES
+
+</button>
+
+<br><br>
+
+<div id="adminGallery"></div>
+
+</div>
+
+
+<!-- ADMIN DISEÑO -->
+
+<div
+class="adminSection"
+id="admin-design">
+
+<div class="formGroup">
+
+<label>
+Nombre de la tienda
+</label>
+
+<input id="setBrand">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Título de portada
+</label>
+
+<input id="setHeroTitle">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Texto de portada
+</label>
+
+<textarea id="setHeroText"></textarea>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Texto de promociones
+</label>
+
+<textarea id="setPromoText"></textarea>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Fondo de la portada
+</label>
+
+<input
+type="file"
+id="heroBackground"
+accept="image/*">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+O usar una URL de imagen
+</label>
+
+<input
+id="heroBackgroundUrl"
+placeholder="https://...">
+
+</div>
+
+
+<div class="formGrid">
+
+<div class="formGroup">
+
+<label>
+Instagram
+</label>
+
+<input
+id="setInstagram"
+placeholder="@usuario o enlace">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+TikTok
+</label>
+
+<input
+id="setTikTok"
+placeholder="@usuario o enlace">
+
+</div>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Información de contacto
+</label>
+
+<textarea id="setContact"></textarea>
+
+</div>
+
+
+<button
+class="btn"
+onclick="saveDesign()">
+
+💾 GUARDAR DISEÑO
+
+</button>
+
+</div>
+
+
+<!-- ADMIN ENVÍOS -->
+
+<div
+class="adminSection"
+id="admin-shipping">
+
+<div class="formGroup">
+
+<label>
+Mensaje superior de envíos
+</label>
+
+<input
+id="setShippingTop"
+placeholder="Envíos a toda Guatemala">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Zonas de cobertura
+</label>
+
+<textarea id="setZones"></textarea>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Costo de envío
+</label>
+
+<textarea id="setShippingCost"></textarea>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Tiempo de entrega
+</label>
+
+<textarea id="setShippingTime"></textarea>
+
+</div>
+
+
+<button
+class="btn"
+onclick="saveShipping()">
+
+💾 GUARDAR ENVÍOS
+
+</button>
+
+</div>
+
+
+<!-- ADMIN PAGOS -->
+
+<div
+class="adminSection"
+id="admin-payments">
+
+
+<div class="formGroup">
+
+<label>
+🔗 Enlace de Recurrente
+</label>
+
+<input
+id="setRecurrente"
+placeholder="https://app.recurrente.com/...">
+
+</div>
+
+
+<p style="
+font-size:12px;
+color:#777;
+margin-bottom:15px;">
+
+Este enlace será utilizado por los tres métodos:
+Tarjeta, Depósito bancario y Transferencia bancaria.
+
+</p>
+
+
+<div class="formGroup">
+
+<label>
+💳 Instrucciones para tarjeta
+</label>
+
+<textarea id="setCardInstructions"></textarea>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+📲 Datos / instrucciones de depósito
+</label>
+
+<textarea id="setDepositInstructions"></textarea>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+🏦 Datos / instrucciones de transferencia
+</label>
+
+<textarea id="setTransferInstructions"></textarea>
+
+</div>
+
+
+<button
+class="btn"
+onclick="savePayments()">
+
+💾 GUARDAR MÉTODOS DE PAGO
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- EDITOR PRODUCTO -->
+
+<div class="modal" id="productEditor">
+
+<div class="modalBox modalLarge">
+
+<button class="close"
+onclick="closeModal('productEditor')">
+×
+</button>
+
+<h2 class="modalTitle">
+Editar producto
+</h2>
+
+<input
+type="hidden"
+id="editProductId">
+
+
+<div class="formGrid">
+
+<div class="formGroup">
+
+<label>
+Nombre
+</label>
+
+<input id="productName">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Precio Q
+</label>
+
+<input
+id="productPrice"
+type="number"
+step="0.01">
+
+</div>
+
+</div>
+
+
+<div class="formGrid">
+
+<div class="formGroup">
+
+<label>
+Categoría
+</label>
+
+<input id="productCategory">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Disponibilidad
+</label>
+
+<select id="productStock">
+
+<option value="available">
+🟢 DISPONIBLE
+</option>
+
+<option value="sold">
+🔴 AGOTADO
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Descripción
+</label>
+
+<textarea id="productDescription"></textarea>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Especificaciones
+</label>
+
+<textarea id="productSpecifications"></textarea>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Fotografías del producto
+</label>
+
+<input
+type="file"
+id="productImages"
+accept="image/*"
+multiple>
+
+</div>
+
+
+<button
+class="btn"
+onclick="saveProduct()">
+
+💾 GUARDAR PRODUCTO
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* ==========================================================
+   CONFIGURACIÓN
+========================================================== */
+
+const ADMIN_PASSWORD = "nyx26";
+
+const DEFAULT_RECURRENT =
+"https://app.recurrente.com/s/pablo-quintero-m8lck8/pagar";
+
+
+let settings = JSON.parse(
+localStorage.getItem("nyxSettings")
+) || {
+
+brand:"Nyx.shop",
+
+heroTitle:"Nyx.shop",
+
+heroText:
+"Descubre nuestra selección de productos con diseños exclusivos y una experiencia de compra moderna.",
+
+promoTitle:
+"PROMOCIONES ESPECIALES",
+
+promoText:
+"Descubre nuestros productos y novedades.",
+
+instagram:
+"https://www.instagram.com/6.Nyx.77/",
+
+tiktok:
+"https://www.tiktok.com/",
+
+contact:
+"Escríbenos para obtener información.",
+
+heroBackground:""
+
+};
+
+
+let shipping = JSON.parse(
+localStorage.getItem("nyxShipping")
+) || {
+
+top:
+"ENVÍOS A TODA GUATEMALA",
+
+zones:
+"Envíos a toda Guatemala.",
+
+cost:
+"Consulta el costo de envío.",
+
+time:
+"Los tiempos de entrega dependen de la ubicación."
+
+};
+
+
+let payments = JSON.parse(
+localStorage.getItem("nyxPayments")
+) || {
+
+recurrente:
+DEFAULT_RECURRENT,
+
+card:
+"Selecciona esta opción para pagar con tarjeta mediante Recurrente.",
+
+deposit:
+"Realiza tu depósito utilizando los datos bancarios proporcionados por la tienda y envía tu comprobante.",
+
+transfer:
+"Realiza la transferencia utilizando los datos bancarios proporcionados por la tienda y envía tu comprobante."
+
+};
+
+
+let products = JSON.parse(
+localStorage.getItem("nyxProducts")
+) || [];
+
+
+let gallery = JSON.parse(
+localStorage.getItem("nyxGallery")
+) || [];
+
+
+let cart = JSON.parse(
+localStorage.getItem("nyxCart")
+) || [];
+
+
+let selectedCategory = "Todos";
+
+let currentProduct = null;
+
+let selectedPayment = "card";
+
+
+/* ==========================================================
+   INICIO
+========================================================== */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+applySettings();
+
+renderCategories();
+
+renderProducts();
+
+renderGallery();
+
+updateCartCount();
+
+selectPayment("card");
+
+});
+
+
+/* ==========================================================
+   GUARDAR TODO
+========================================================== */
+
+function saveAll(){
+
+localStorage.setItem(
+"nyxSettings",
+JSON.stringify(settings)
+);
+
+localStorage.setItem(
+"nyxShipping",
+JSON.stringify(shipping)
+);
+
+localStorage.setItem(
+"nyxPayments",
+JSON.stringify(payments)
+);
+
+localStorage.setItem(
+"nyxProducts",
+JSON.stringify(products)
+);
+
+localStorage.setItem(
+"nyxGallery",
+JSON.stringify(gallery)
+);
+
+localStorage.setItem(
+"nyxCart",
+JSON.stringify(cart)
+);
+
+}
+
+
+/* ==========================================================
+   APLICAR CONFIGURACIÓN
+========================================================== */
+
+function applySettings(){
+
+document.getElementById("logo").textContent =
+settings.brand;
+
+document.getElementById("footerLogo").textContent =
+settings.brand;
+
+document.title =
+settings.brand;
+
+document.getElementById("heroTitle").textContent =
+settings.heroTitle;
+
+document.getElementById("heroText").textContent =
+settings.heroText;
+
+document.getElementById("promoTitle").textContent =
+settings.promoTitle;
+
+document.getElementById("promoText").textContent =
+settings.promoText;
+
+document.getElementById("contactText").textContent =
+settings.contact;
+
+document.getElementById("topbar").textContent =
+shipping.top;
+
+if(settings.heroBackground){
+
+document.querySelector(".hero").style.backgroundImage =
+"url('" + settings.heroBackground + "')";
+
+}else{
+
+document.querySelector(".hero").style.backgroundImage =
+"url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=90')";
+
+}
+
+
+setSocialLink(
+"instagramLink",
+settings.instagram
+);
+
+setSocialLink(
+"footerInstagram",
+settings.instagram
+);
+
+setSocialLink(
+"tiktokLink",
+settings.tiktok
+);
+
+setSocialLink(
+"footerTiktok",
+settings.tiktok
+);
+
+
+document.getElementById("shippingZones").textContent =
+shipping.zones;
+
+document.getElementById("shippingCost").textContent =
+shipping.cost;
+
+document.getElementById("shippingTime").textContent =
+shipping.time;
+
+document.getElementById("depositPublic").textContent =
+payments.deposit;
+
+document.getElementById("transferPublic").textContent =
+payments.transfer;
+
+}
+
+
+function setSocialLink(id,value){
+
+let element =
+document.getElementById(id);
+
+if(!element)return;
+
+let url = value.trim();
+
+if(url && !url.startsWith("http")){
+
+if(id.toLowerCase().includes("instagram")){
+
+url =
+"https://www.instagram.com/" +
+url.replace("@","") +
+"/";
+
+}else{
+
+url =
+"https://www.tiktok.com/@" +
+url.replace("@","");
+
+}
+
+}
+
+element.href =
+url || "#";
+
+}
+
+
+/* ==========================================================
+   CATEGORÍAS
+========================================================== */
+
+function renderCategories(){
+
+let container =
+document.getElementById("categories");
+
+let cats = [
+"Todos",
+...new Set(
+products.map(p=>p.category)
+)
+];
+
+container.innerHTML =
+cats.map(cat=>`
+
+<button
+class="category ${cat===selectedCategory?"active":""}"
+onclick="filterCategory('${escapeAttr(cat)}')">
+
+${escapeHtml(cat)}
+
+</button>
+
+`).join("");
+
+}
+
+
+function filterCategory(category){
+
+selectedCategory = category;
+
+renderCategories();
+
+renderProducts();
+
+}
+
+
+/* ==========================================================
+   PRODUCTOS
+========================================================== */
+
+function renderProducts(){
+
+let container =
+document.getElementById("products");
+
+let list = products;
+
+if(selectedCategory!=="Todos"){
+
+list =
+products.filter(
+p=>p.category===selectedCategory
+);
+
+}
+
+
+if(!list.length){
+
+container.innerHTML = `
+
+<div style="
+grid-column:1/-1;
+text-align:center;
+padding:50px;
+color:#777;">
+
+Aún no hay productos publicados.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+container.innerHTML =
+list.map(product=>{
+
+let sold =
+product.stock==="sold";
+
+let image =
+product.images?.[0] || "";
+
+return `
+
+<article class="card">
+
+<div class="cardImg">
+
+<img
+src="${image}"
+alt="${escapeAttr(product.name)}">
+
+<div class="badge ${sold?"badgeSold":""}">
+
+${sold?"AGOTADO":"DISPONIBLE"}
+
+</div>
+
+</div>
+
+
+<div class="cardInfo">
+
+<div class="cardCat">
+${escapeHtml(product.category)}
+</div>
+
+<h3 class="cardName">
+${escapeHtml(product.name)}
+</h3>
+
+<p class="cardDesc">
+${escapeHtml(product.description)}
+</p>
+
+<div class="price">
+Q${Number(product.price).toFixed(2)}
+</div>
+
+<div class="cardButtons">
+
+<button
+class="btn btnOutline"
+onclick="openProduct(${product.id})">
+
+VER
+
+</button>
+
+<button
+class="btn ${sold?"disabled":""}"
+${sold?"disabled":""}
+onclick="addToCart(${product.id})">
+
+${sold?"AGOTADO":"AGREGAR"}
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+`;
+
+}).join("");
+
+}
+
+
+/* ==========================================================
+   DETALLE
+========================================================== */
+
+function openProduct(id){
+
+let product =
+products.find(p=>p.id===id);
+
+if(!product)return;
+
+currentProduct = product;
+
+document.getElementById("detailCategory").textContent =
+product.category;
+
+document.getElementById("detailName").textContent =
+product.name;
+
+document.getElementById("detailPrice").textContent =
+"Q"+Number(product.price).toFixed(2);
+
+document.getElementById("detailDescription").textContent =
+product.description;
+
+document.getElementById("detailSpecifications").textContent =
+product.specifications || "No especificado.";
+
+document.getElementById("detailMainImage").src =
+product.images?.[0] || "";
+
+let thumbs =
+document.getElementById("detailThumbs");
+
+thumbs.innerHTML =
+(product.images||[]).map((img,index)=>`
+
+<img
+class="thumb ${index===0?"active":""}"
+src="${img}"
+onclick="changeDetailImage('${escapeAttr(img)}',this)">
+
+`).join("");
+
+
+let btn =
+document.getElementById("detailButton");
+
+if(product.stock==="sold"){
+
+btn.disabled=true;
+
+btn.className="btn disabled";
+
+btn.textContent="AGOTADO";
+
+}else{
+
+btn.disabled=false;
+
+btn.className="btn";
+
+btn.textContent="AGREGAR AL CARRITO";
+
+}
+
+openModal("productModal");
+
+}
+
+
+function changeDetailImage(src,element){
+
+document.getElementById("detailMainImage").src =
+src;
+
+document.querySelectorAll(".thumb")
+.forEach(x=>x.classList.remove("active"));
+
+element.classList.add("active");
+
+}
+
+
+function addDetailToCart(){
+
+if(currentProduct){
+
+addToCart(currentProduct.id);
+
+}
+
+}
+
+
+/* ==========================================================
+   CARRITO
+========================================================== */
+
+function addToCart(id){
+
+let product =
+products.find(p=>p.id===id);
+
+if(!product)return;
+
+if(product.stock==="sold"){
+
+showToast("Este producto está agotado.");
+
+return;
+
+}
+
+let item =
+cart.find(x=>x.id===id);
+
+if(item){
+
+item.quantity++;
+
+}else{
+
+cart.push({
+id,
+quantity:1
+});
+
+}
+
+saveAll();
+
+updateCartCount();
+
+showToast("Producto agregado al carrito.");
+
+}
+
+
+function updateCartCount(){
+
+let count =
+cart.reduce(
+(a,b)=>a+b.quantity,
+0
+);
+
+document.getElementById("cartCount").textContent =
+count;
+
+}
+
+
+function openCart(){
+
+renderCart();
+
+openModal("cartModal");
+
+}
+
+
+function renderCart(){
+
+let container =
+document.getElementById("cartItems");
+
+if(!cart.length){
+
+container.innerHTML =
+"<p>Tu carrito está vacío.</p>";
+
+document.getElementById("cartTotal").textContent =
+"Q0.00";
+
+return;
+
+}
+
+let total=0;
+
+container.innerHTML =
+cart.map(item=>{
+
+let product =
+products.find(p=>p.id===item.id);
+
+if(!product)return "";
+
+let subtotal =
+product.price*item.quantity;
+
+total+=subtotal;
+
+return `
+
+<div class="cartItem">
+
+<img
+src="${product.images?.[0]||""}"
+alt="">
+
+<div class="cartInfo">
+
+<strong>
+${escapeHtml(product.name)}
+</strong>
+
+<p>
+Q${Number(product.price).toFixed(2)}
+</p>
+
+<div class="quantity">
+
+<button
+onclick="changeQuantity(${product.id},-1)">
+−
+</button>
+
+<span>
+${item.quantity}
+</span>
+
+<button
+onclick="changeQuantity(${product.id},1)">
++
+</button>
+
+<button
+onclick="removeCart(${product.id})"
+style="
+margin-left:10px;
+border:0;
+background:none;">
+🗑️
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+document.getElementById("cartTotal").textContent =
+"Q"+total.toFixed(2);
+
+}
+
+
+function changeQuantity(id,amount){
+
+let item =
+cart.find(x=>x.id===id);
+
+if(!item)return;
+
+item.quantity+=amount;
+
+if(item.quantity<=0){
+
+cart =
+cart.filter(x=>x.id!==id);
+
+}
+
+saveAll();
+
+updateCartCount();
+
+renderCart();
+
+}
+
+
+function removeCart(id){
+
+cart =
+cart.filter(x=>x.id!==id);
+
+saveAll();
+
+updateCartCount();
+
+renderCart();
+
+}
+
+
+/* ==========================================================
+   CHECKOUT
+========================================================== */
+
+function openCheckout(){
+
+if(!cart.length){
+
+showToast("Tu carrito está vacío.");
+
+return;
+
+}
+
+closeModal("cartModal");
+
+selectPayment("card");
+
+openModal("checkoutModal");
+
+}
+
+
+function selectPayment(method){
+
+selectedPayment=method;
+
+document.querySelectorAll(".paymentMethod")
+.forEach(x=>x.classList.remove("active"));
+
+if(method==="card"){
+
+document.getElementById("payCard")
+.classList.add("active");
+
+}else if(method==="deposit"){
+
+document.getElementById("payDeposit")
+.classList.add("active");
+
+}else{
+
+document.getElementById("payTransfer")
+.classList.add("active");
+
+}
+
+
+let info =
+document.getElementById("paymentInfo");
+
+
+if(method==="card"){
+
+info.innerHTML = `
+
+<strong>💳 Pago con tarjeta</strong>
+
+<p>
+${escapeHtml(payments.card)}
+</p>
+
+`;
+
+}else if(method==="deposit"){
+
+info.innerHTML = `
+
+<strong>📲 Depósito bancario</strong>
+
+<p>
+${escapeHtml(payments.deposit)}
+</p>
+
+`;
+
+}else{
+
+info.innerHTML = `
+
+<strong>🏦 Transferencia bancaria</strong>
+
+<p>
+${escapeHtml(payments.transfer)}
+</p>
+
+`;
+
+}
+
+}
+
+
+/* ==========================================================
+   RECURRENTE
+========================================================== */
+
+function payRecurrente(){
+
+if(!payments.recurrente){
+
+showToast(
+"No hay enlace de Recurrente configurado."
+);
+
+return;
+
+}
+
+window.open(
+payments.recurrente,
+"_blank",
+"noopener,noreferrer"
+);
+
+}
+
+
+/* ==========================================================
+   PEDIDO
+========================================================== */
+
+function sendOrder(){
+
+let name =
+document.getElementById("customerName")
+.value.trim();
+
+let phone =
+document.getElementById("customerPhone")
+.value.trim();
+
+let address =
+document.getElementById("customerAddress")
+.value.trim();
+
+if(!name||!phone||!address){
+
+showToast(
+"Completa tus datos para continuar."
+);
+
+return;
+
+}
+
+let order = {
+
+name,
+
+phone,
+
+address,
+
+payment:selectedPayment,
+
+products:cart,
+
+date:new Date().toISOString()
+
+};
+
+console.log("PEDIDO",order);
+
+showToast(
+"Información del pedido preparada."
+);
+
+}
+
+
+/* ==========================================================
+   GALERÍA
+========================================================== */
+
+function renderGallery(){
+
+let container =
+document.getElementById("gallery");
+
+if(!gallery.length){
+
+container.innerHTML =
+"<p style='grid-column:1/-1;text-align:center;color:#777;'>La galería está vacía.</p>";
+
+return;
+
+}
+
+container.innerHTML =
+gallery.map(img=>`
+
+<div class="galleryItem">
+
+<img
+src="${img}"
+alt="Galería">
+
+</div>
+
+`).join("");
+
+}
+
+
+/* ==========================================================
+   ADMIN LOGIN
+========================================================== */
+
+function openAdminLogin(){
+
+document.getElementById("adminPassword").value="";
+
+openModal("adminLoginModal");
+
+}
+
+
+function loginAdmin(){
+
+let password =
+document.getElementById("adminPassword").value;
+
+if(password!==ADMIN_PASSWORD){
+
+showToast("Contraseña incorrecta.");
+
+return;
+
+}
+
+closeModal("adminLoginModal");
+
+loadAdminForms();
+
+renderAdminProducts();
+
+renderAdminGallery();
+
+openModal("adminModal");
+
+}
+
+
+function logoutAdmin(){
+
+closeModal("adminModal");
+
+}
+
+
+/* ==========================================================
+   ADMIN TABS
+========================================================== */
+
+function adminTab(name,button){
+
+document.querySelectorAll(".adminSection")
+.forEach(x=>x.classList.remove("active"));
+
+document.querySelectorAll(".adminTab")
+.forEach(x=>x.classList.remove("active"));
+
+document.getElementById(
+"admin-"+name
+).classList.add("active");
+
+button.classList.add("active");
+
+}
+
+
+/* ==========================================================
+   ADMIN PRODUCTOS
+========================================================== */
+
+function renderAdminProducts(){
+
+let container =
+document.getElementById("adminProducts");
+
+container.innerHTML =
+products.map(product=>`
+
+<div class="adminProduct">
+
+<img
+src="${product.images?.[0]||""}">
+
+<div class="adminProductInfo">
+
+<strong>
+${escapeHtml(product.name)}
+</strong>
+
+<div>
+Q${Number(product.price).toFixed(2)}
+</div>
+
+<div class="${
+product.stock==="sold"
+?"statusSold"
+:"statusAvailable"
+}">
+
+${
+product.stock==="sold"
+?"🔴 AGOTADO"
+:"🟢 DISPONIBLE"
+}
+
+</div>
+
+</div>
+
+
+<div class="adminActions">
+
+<button
+onclick="editProduct(${product.id})">
+✏️
+</button>
+
+<button
+onclick="toggleStock(${product.id})">
+
+${
+product.stock==="sold"
+?"🟢"
+:"🔴"
+}
+
+</button>
+
+<button
+onclick="deleteProduct(${product.id})">
+🗑️
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+function newProduct(){
+
+document.getElementById("editProductId").value="";
+
+document.getElementById("productName").value="";
+
+document.getElementById("productPrice").value="";
+
+document.getElementById("productCategory").value="";
+
+document.getElementById("productDescription").value="";
+
+document.getElementById("productSpecifications").value="";
+
+document.getElementById("productStock").value="available";
+
+document.getElementById("productImages").value="";
+
+openModal("productEditor");
+
+}
+
+
+function editProduct(id){
+
+let product =
+products.find(p=>p.id===id);
+
+if(!product)return;
+
+document.getElementById("editProductId").value =
+product.id;
+
+document.getElementById("productName").value =
+product.name;
+
+document.getElementById("productPrice").value =
+product.price;
+
+document.getElementById("productCategory").value =
+product.category;
+
+document.getElementById("productDescription").value =
+product.description;
+
+document.getElementById("productSpecifications").value =
+product.specifications||"";
+
+document.getElementById("productStock").value =
+product.stock;
+
+document.getElementById("productImages").value="";
+
+openModal("productEditor");
+
+}
+
+
+async function saveProduct(){
+
+let id =
+document.getElementById("editProductId").value;
+
+let name =
+document.getElementById("productName").value.trim();
+
+let price =
+Number(document.getElementById("productPrice").value);
+
+let category =
+document.getElementById("productCategory").value.trim();
+
+let description =
+document.getElementById("productDescription").value.trim();
+
+let specifications =
+document.getElementById("productSpecifications").value.trim();
+
+let stock =
+document.getElementById("productStock").value;
+
+let files =
+[...document.getElementById("productImages").files];
+
+
+if(!name||!price||!category){
+
+showToast(
+"Completa nombre, precio y categoría."
+);
+
+return;
+
+}
+
+let images=[];
+
+if(files.length){
+
+images =
+await filesToDataURL(files);
+
+}
+
+
+if(id){
+
+let product =
+products.find(p=>p.id===Number(id));
+
+product.name=name;
+
+product.price=price;
+
+product.category=category;
+
+product.description=description;
+
+product.specifications=specifications;
+
+product.stock=stock;
+
+if(images.length){
+
+product.images=images;
+
+}
+
+}else{
+
+products.push({
+
+id:Date.now(),
+
+name,
+
+price,
+
+category,
+
+description,
+
+specifications,
+
+stock,
+
+images:
+images.length
+?images
+:["https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85"]
+
+});
+
+}
+
+
+saveAll();
+
+renderCategories();
+
+renderProducts();
+
+renderAdminProducts();
+
+closeModal("productEditor");
+
+showToast("Producto guardado.");
+
+}
+
+
+function toggleStock(id){
+
+let product =
+products.find(p=>p.id===id);
+
+if(!product)return;
+
+product.stock =
+product.stock==="sold"
+?"available"
+:"sold";
+
+saveAll();
+
+renderProducts();
+
+renderAdminProducts();
+
+showToast(
+product.stock==="sold"
+?"Producto agotado."
+:"Producto disponible."
+);
+
+}
+
+
+function deleteProduct(id){
+
+if(!confirm(
+"¿Eliminar este producto?"
+))return;
+
+products =
+products.filter(p=>p.id!==id);
+
+cart =
+cart.filter(x=>x.id!==id);
+
+saveAll();
+
+renderProducts();
+
+renderCategories();
+
+renderAdminProducts();
+
+updateCartCount();
+
+showToast("Producto eliminado.");
+
+}
+
+
+/* ==========================================================
+   ADMIN GALERÍA
+========================================================== */
+
+async function uploadGallery(){
+
+let input =
+document.getElementById("galleryFiles");
+
+let files =
+[...input.files];
+
+if(!files.length){
+
+showToast("Selecciona imágenes.");
+
+return;
+
+}
+
+let images =
+await filesToDataURL(files);
+
+gallery.push(...images);
+
+saveAll();
+
+renderGallery();
+
+renderAdminGallery();
+
+input.value="";
+
+showToast("Galería actualizada.");
+
+}
+
+
+function renderAdminGallery(){
+
+let container =
+document.getElementById("adminGallery");
+
+container.innerHTML =
+gallery.map((img,index)=>`
+
+<div class="adminGalleryItem">
+
+<img src="${img}">
+
+<div>
+Fotografía ${index+1}
+</div>
+
+<button
+onclick="deleteGallery(${index})"
+style="
+border:1px solid #ddd;
+background:#fff;
+padding:8px;">
+
+🗑️
+
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+
+function deleteGallery(index){
+
+if(!confirm(
+"¿Eliminar esta fotografía?"
+))return;
+
+gallery.splice(index,1);
+
+saveAll();
+
+renderGallery();
+
+renderAdminGallery();
+
+}
+
+
+/* ==========================================================
+   ADMIN FORMULARIOS
+========================================================== */
+
+function loadAdminForms(){
+
+document.getElementById("setBrand").value =
+settings.brand;
+
+document.getElementById("setHeroTitle").value =
+settings.heroTitle;
+
+document.getElementById("setHeroText").value =
+settings.heroText;
+
+document.getElementById("setPromoText").value =
+settings.promoText;
+
+document.getElementById("setInstagram").value =
+settings.instagram;
+
+document.getElementById("setTikTok").value =
+settings.tiktok;
+
+document.getElementById("setContact").value =
+settings.contact;
+
+document.getElementById("setShippingTop").value =
+shipping.top;
+
+document.getElementById("setZones").value =
+shipping.zones;
+
+document.getElementById("setShippingCost").value =
+shipping.cost;
+
+document.getElementById("setShippingTime").value =
+shipping.time;
+
+document.getElementById("setRecurrente").value =
+payments.recurrente;
+
+document.getElementById("setCardInstructions").value =
+payments.card;
+
+document.getElementById("setDepositInstructions").value =
+payments.deposit;
+
+document.getElementById("setTransferInstructions").value =
+payments.transfer;
+
+document.getElementById("heroBackgroundUrl").value =
+settings.heroBackground||"";
+
+}
+
+
+/* ==========================================================
+   GUARDAR DISEÑO
+========================================================== */
+
+async function saveDesign(){
+
+settings.brand =
+document.getElementById("setBrand").value.trim();
+
+settings.heroTitle =
+document.getElementById("setHeroTitle").value.trim();
+
+settings.heroText =
+document.getElementById("setHeroText").value.trim();
+
+settings.promoText =
+document.getElementById("setPromoText").value.trim();
+
+settings.instagram =
+document.getElementById("setInstagram").value.trim();
+
+settings.tiktok =
+document.getElementById("setTikTok").value.trim();
+
+settings.contact =
+document.getElementById("setContact").value.trim();
+
+
+let url =
+document.getElementById("heroBackgroundUrl")
+.value.trim();
+
+if(url){
+
+settings.heroBackground=url;
+
+}
+
+
+let file =
+document.getElementById("heroBackground")
+.files[0];
+
+if(file){
+
+let result =
+await filesToDataURL([file]);
+
+settings.heroBackground=result[0];
+
+}
+
+
+saveAll();
+
+applySettings();
+
+showToast(
+"Diseño actualizado."
+);
+
+}
+
+
+/* ==========================================================
+   GUARDAR ENVÍOS
+========================================================== */
+
+function saveShipping(){
+
+shipping.top =
+document.getElementById("setShippingTop")
+.value.trim();
+
+shipping.zones =
+document.getElementById("setZones")
+.value.trim();
+
+shipping.cost =
+document.getElementById("setShippingCost")
+.value.trim();
+
+shipping.time =
+document.getElementById("setShippingTime")
+.value.trim();
+
+saveAll();
+
+applySettings();
+
+showToast(
+"Información de envíos actualizada."
+);
+
+}
+
+
+/* ==========================================================
+   GUARDAR PAGOS
+========================================================== */
+
+function savePayments(){
+
+payments.recurrente =
+document.getElementById("setRecurrente")
+.value.trim();
+
+payments.card =
+document.getElementById("setCardInstructions")
+.value.trim();
+
+payments.deposit =
+document.getElementById("setDepositInstructions")
+.value.trim();
+
+payments.transfer =
+document.getElementById("setTransferInstructions")
+.value.trim();
+
+saveAll();
+
+applySettings();
+
+selectPayment(selectedPayment);
+
+showToast(
+"Métodos de pago actualizados."
+);
+
+}
+
+
+/* ==========================================================
+   ARCHIVOS
+========================================================== */
+
+function filesToDataURL(files){
+
+return Promise.all(
+files.map(file=>{
+
+return new Promise(resolve=>{
+
+let reader =
+new FileReader();
+
+reader.onload =
+e=>resolve(e.target.result);
+
+reader.readAsDataURL(file);
+
+});
+
+})
+);
+
+}
+
+
+/* ==========================================================
+    MODALES 
+========================================================== */
+
+function openModal(id){
+
+document.getElementById(id)
+.classList.add("open");
+
+}
+
+
+function closeModal(id){
+
+document.getElementById(id)
+.classList.remove("open");
+
+}
+
+
+/* ==========================================================
+   TOAST
+========================================================== */
+
+function showToast(message){
+
+let toast =
+document.getElementById("toast");
+
+toast.textContent=message;
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+},2500);
+
+}
+
+
+/* ==========================================================
+     SEGURIDAD DE TEXTO  
+========================================================== */
+
+funcióNescapeHtlescapeHtml(valor){
+
+volver Cuerda(valor)
+.reemplazar Todo   Todo    ,"&","&amp;")
+.reemplazar  reemplazar  "TodoTodo"   ,"&lt;")
+ .reemplazar    reemplazar    lt....................................................... . Todoreemplazar   reemplazar       (">","&GT;")
+.TodoTodoreemplazarTodoTodo('"',"&quot;")
+. TodoTodo   TodoTodo("'","&#039;");
+
+}
+
+
+"&amp;""&amp;"funció)(value){
+
+volver escapeHtml(valor);
+
+}
+
+
+/* ==========================================================
+       CERRAR MODAL AL HACER CLICK AFUERA    
+========================================================== */
+
+documento.consultaSelectorAll("modal").consultaSelectorAll(".modal")querySelectorAll(".modal")
+.Para cada  unocada   unomodal(=uno{
+
+modal.A... .ññ Adir   Adireventosde               ñdeeventosde                                                                      ("Clic",e=>{
+
+Si(e.objetivo..===modal){
+
+modal..claseLista.eliminar("Abierto");
+
+}
+
+});
+
+});
+
+
+/* ==========================================================
+ ESC 
+========================================================== */
+
+documento.A.. .ññ .. .ññ DedeDee. Eventos ñAdiroyente   ("Keydown",e=>{
+
+Si(e.clave==="Escape"){
+
+documento.consultaSelectorAll("modal.open")..consultaSelectorAll(".modal.open").querySelectorAll(".modal.open").querySelectorAll(".modal.open")
+.Para    ((uno
+{//>guión>modal({.eliminar("Abierto");
+});
+
+}
+
+});
+
+<//>guión>
+
+</unocuerpo>
+</HTML>
+
+
