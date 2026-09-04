@@ -17,413 +17,1069 @@ img{max-width:100%;display:block}
 .topbar{background:#050505;color:#fff;text-align:center;padding:10px 15px;font-size:12px;letter-spacing:1.5px}
 
 header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(15px);border-bottom:1px solid #e8e8e8}
-.nav{max-width:1250px;height:72px;margin:auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+
+.nav{
+max-width:1250px;
+height:72px;
+margin:auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px
+}
+
 .logo{font-size:24px;font-weight:900;letter-spacing:3px}
-.navlinks{display:flex;gap:26px;list-style:none}
-.navlinks a{color:#111;text-decoration:none;font-size:13px}
+
+.navlinks{
+display:flex;
+gap:26px;
+list-style:none
+}
+
+.navlinks a{
+color:#111;
+text-decoration:none;
+font-size:13px
+}
+
 .navactions{display:flex;gap:9px}
-.icon{width:42px;height:42px;border:1px solid #ddd;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px}
-.cartbadge{position:absolute;margin-top:-30px;margin-left:25px;width:18px;height:18px;background:#000;color:#fff;border-radius:50%;font-size:10px;display:flex;justify-content:center;align-items:center}
 
-.hero{min-height:680px;position:relative;background-size:cover;background-position:center;display:flex;justify-content:center;align-items:center;text-align:center;color:white;padding:50px 20px}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.65))}
-.heroContent{position:relative;max-width:850px}
-.heroSmall{font-size:11px;letter-spacing:5px}
-.hero h1{font-size:clamp(48px,9vw,95px);letter-spacing:7px;margin:20px 0}
-.hero p{font-size:17px;line-height:1.7;margin-bottom:30px}
+.icon{
+width:42px;
+height:42px;
+border:1px solid #ddd;
+background:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px
+}
 
-.btn{border:0;background:#050505;color:#fff;padding:14px 23px;font-size:12px;letter-spacing:1px;transition:.2s}
+.cartbadge{
+position:absolute;
+margin-top:-30px;
+margin-left:25px;
+width:18px;
+height:18px;
+background:#000;
+color:#fff;
+border-radius:50%;
+font-size:10px;
+display:flex;
+justify-content:center;
+align-items:center
+}
+
+.hero{
+min-height:680px;
+position:relative;
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:50px 20px
+}
+
+.hero:before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.65))
+}
+
+.heroContent{
+position:relative;
+max-width:850px
+}
+
+.heroSmall{
+font-size:11px;
+letter-spacing:5px
+}
+
+.hero h1{
+font-size:clamp(48px,9vw,95px);
+letter-spacing:7px;
+margin:20px 0
+}
+
+.hero p{
+font-size:17px;
+line-height:1.7;
+margin-bottom:30px
+}
+
+.btn{
+border:0;
+background:#050505;
+color:#fff;
+padding:14px 23px;
+font-size:12px;
+letter-spacing:1px;
+transition:.2s
+}
+
 .btn:hover{opacity:.78}
 .btnWhite{background:#fff;color:#000}
 .btnOutline{background:white;color:#111;border:1px solid #111}
 .btnDanger{background:#a40000}
 .btnGreen{background:#087d2b}
-.disabled{background:#ccc!important;color:#666!important;cursor:not-allowed}
+.disabled{
+background:#ccc!important;
+color:#666!important;
+cursor:not-allowed
+}
 
 section{padding:80px 20px}
-.container{max-width:1250px;margin:auto}
-.heading{text-align:center;margin-bottom:42px}
-.heading span{font-size:10px;letter-spacing:4px;color:#888}
-.heading h2{font-size:35px;margin-top:10px}
 
-.promo{background:#0a0a0a;color:#fff;text-align:center}
-.promo h2{font-size:34px;margin-bottom:10px}
+.container{
+max-width:1250px;
+margin:auto
+}
+
+.heading{
+text-align:center;
+margin-bottom:42px
+}
+
+.heading span{
+font-size:10px;
+letter-spacing:4px;
+color:#888
+}
+
+.heading h2{
+font-size:35px;
+margin-top:10px
+}
+
+.promo{
+background:#0a0a0a;
+color:#fff;
+text-align:center
+}
+
+.promo h2{
+font-size:34px;
+margin-bottom:10px
+}
+
 .promo p{color:#bbb}
 
-.categories{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:35px}
-.category{padding:10px 17px;border:1px solid #ddd;background:#fff;border-radius:30px}
-.category.active{background:#000;color:#fff}
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px
+}
 
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.card{background:#fff;border:1px solid #eee;overflow:hidden;transition:.25s}
+.card{
+background:#fff;
+border:1px solid #eee;
+overflow:hidden;
+transition:.25s
+}
+
 .card:hover{transform:translateY(-4px)}
-.cardImg{height:350px;position:relative;background:#eee}
-.cardImg img{width:100%;height:100%;object-fit:cover}
-.badge{position:absolute;left:12px;top:12px;background:#000;color:#fff;padding:7px 10px;font-size:9px;letter-spacing:1px}
+
+.cardImg{
+height:350px;
+position:relative;
+background:#eee
+}
+
+.cardImg img{
+width:100%;
+height:100%;
+object-fit:cover
+}
+
+.badge{
+position:absolute;
+left:12px;
+top:12px;
+background:#000;
+color:#fff;
+padding:7px 10px;
+font-size:9px;
+letter-spacing:1px
+}
+
 .badgeSold{background:#a40000}
+
 .cardInfo{padding:18px}
-.cardCat{color:#888;font-size:10px;text-transform:uppercase;letter-spacing:2px}
-.cardName{font-size:18px;margin:7px 0}
-.cardDesc{color:#777;font-size:12px;line-height:1.5;min-height:38px}
-.price{font-size:18px;font-weight:bold;margin:14px 0}
-.cardButtons{display:flex;gap:7px}
+
+.cardName{
+font-size:18px;
+margin:7px 0
+}
+
+.cardMaterial{
+font-size:12px;
+color:#777;
+margin:8px 0
+}
+
+.cardDesc{
+color:#777;
+font-size:12px;
+line-height:1.5;
+min-height:38px
+}
+
+.price{
+font-size:18px;
+font-weight:bold;
+margin:14px 0
+}
+
+.cardButtons{
+display:flex;
+gap:7px
+}
+
 .cardButtons button{flex:1}
 
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.galleryItem{height:260px;overflow:hidden;background:#ddd}
-.galleryItem img{width:100%;height:100%;object-fit:cover;transition:.3s}
-.galleryItem:hover img{transform:scale(1.05)}
+.infoGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
+}
 
-.infoGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.info{background:#fff;border:1px solid #eee;padding:30px;text-align:center}
-.infoIcon{font-size:32px;margin-bottom:15px}
+.info{
+background:#fff;
+border:1px solid #eee;
+padding:30px;
+text-align:center
+}
+
+.infoIcon{
+font-size:32px;
+margin-bottom:15px
+}
+
 .info h3{margin-bottom:10px}
-.info p{color:#777;line-height:1.6;font-size:13px}
 
-.social{display:flex;justify-content:center;gap:12px;margin-top:18px}
-.social a{width:48px;height:48px;border-radius:50%;background:#000;color:#fff;text-decoration:none;display:flex;justify-content:center;align-items:center;font-weight:bold;font-size:20px}
+.info p{
+color:#777;
+line-height:1.6;
+font-size:13px
+}
 
-footer{background:#000;color:#fff;padding:50px 20px}
-.footer{max-width:1250px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
-.footerLogo{font-size:25px;letter-spacing:3px;font-weight:bold;margin-bottom:12px}
-.footer p,.footer a{color:#999;font-size:13px;line-height:2;text-decoration:none;display:block}
-.copyright{max-width:1250px;margin:35px auto 0;padding-top:20px;border-top:1px solid #333;color:#666;font-size:11px}
+.social{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:18px
+}
 
-.modal{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.7);padding:15px;align-items:center;justify-content:center}
+.social a{
+width:48px;
+height:48px;
+border-radius:50%;
+background:#000;
+color:#fff;
+text-decoration:none;
+display:flex;
+justify-content:center;
+align-items:center;
+font-weight:bold;
+font-size:20px
+}
+
+footer{
+background:#000;
+color:#fff;
+padding:50px 20px
+}
+
+.footer{
+max-width:1250px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px
+}
+
+.footerLogo{
+font-size:25px;
+letter-spacing:3px;
+font-weight:bold;
+margin-bottom:12px
+}
+
+.footer p,.footer a{
+color:#999;
+font-size:13px;
+line-height:2;
+text-decoration:none;
+display:block
+}
+
+.copyright{
+max-width:1250px;
+margin:35px auto 0;
+padding-top:20px;
+border-top:1px solid #333;
+color:#666;
+font-size:11px
+}
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+z-index:3000;
+background:rgba(0,0,0,.7);
+padding:15px;
+align-items:center;
+justify-content:center
+}
+
 .modal.open{display:flex}
-.modalBox{width:min(720px,100%);max-height:92vh;overflow:auto;background:#fff;padding:30px;position:relative;border-radius:8px}
-.modalLarge{width:min(1050px,100%)}
-.close{position:absolute;right:15px;top:10px;border:0;background:none;font-size:28px}
-.modalTitle{font-size:26px;margin-bottom:25px}
 
-.detail{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.detailImage{height:500px;background:#eee}
-.detailImage img{width:100%;height:100%;object-fit:cover}
-.thumbs{display:flex;gap:7px;overflow:auto;margin-top:10px;padding-bottom:4px}
-.thumb{width:70px;height:70px;object-fit:cover;border:2px solid transparent;cursor:pointer;flex:none}
+.modalBox{
+width:min(720px,100%);
+max-height:92vh;
+overflow:auto;
+background:#fff;
+padding:30px;
+position:relative;
+border-radius:8px
+}
+
+.modalLarge{width:min(1050px,100%)}
+
+.close{
+position:absolute;
+right:15px;
+top:10px;
+border:0;
+background:none;
+font-size:28px
+}
+
+.modalTitle{
+font-size:26px;
+margin-bottom:25px
+}
+
+.detail{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px
+}
+
+.detailImage{
+height:500px;
+background:#eee
+}
+
+.detailImage img{
+width:100%;
+height:100%;
+object-fit:cover
+}
+
+.thumbs{
+display:flex;
+gap:7px;
+overflow:auto;
+margin-top:10px;
+padding-bottom:4px
+}
+
+.thumb{
+width:70px;
+height:70px;
+object-fit:cover;
+border:2px solid transparent;
+cursor:pointer;
+flex:none
+}
+
 .thumb.active{border-color:#000}
 
-.detail h2{font-size:32px;margin:10px 0}
-.detailPrice{font-size:24px;font-weight:bold;margin:20px 0}
-.detailDesc{color:#666;line-height:1.7}
-.specs{margin-top:20px;padding-top:20px;border-top:1px solid #ddd;line-height:1.7}
+.detail h2{
+font-size:32px;
+margin:10px 0
+}
 
-.cartItem{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid #eee}
-.cartItem img{width:80px;height:90px;object-fit:cover}
+.detailPrice{
+font-size:24px;
+font-weight:bold;
+margin:20px 0
+}
+
+.detailMaterial{
+font-size:14px;
+margin:10px 0;
+color:#555
+}
+
+.detailDesc{
+color:#666;
+line-height:1.7
+}
+
+.specs{
+margin-top:20px;
+padding-top:20px;
+border-top:1px solid #ddd;
+line-height:1.7
+}
+
+.cartItem{
+display:flex;
+gap:14px;
+padding:15px 0;
+border-bottom:1px solid #eee
+}
+
+.cartItem img{
+width:80px;
+height:90px;
+object-fit:cover
+}
+
 .cartInfo{flex:1}
-.quantity{display:flex;gap:8px;align-items:center;margin-top:8px}
-.quantity button{width:28px;height:28px;border:1px solid #ddd;background:#fff}
-.total{display:flex;justify-content:space-between;border-top:1px solid #ddd;padding-top:20px;margin-top:20px;font-size:20px;font-weight:bold}
+
+.quantity{
+display:flex;
+gap:8px;
+align-items:center;
+margin-top:8px
+}
+
+.quantity button{
+width:28px;
+height:28px;
+border:1px solid #ddd;
+background:#fff
+}
+
+.total{
+display:flex;
+justify-content:space-between;
+border-top:1px solid #ddd;
+padding-top:20px;
+margin-top:20px;
+font-size:20px;
+font-weight:bold
+}
 
 .formGroup{margin-bottom:15px}
-.formGroup label{display:block;font-size:12px;font-weight:bold;margin-bottom:6px}
-.formGroup input,.formGroup textarea,.formGroup select{width:100%;padding:12px;border:1px solid #ddd;outline:none}
-.formGroup textarea{min-height:100px;resize:vertical}
-.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
 
-.paymentMethods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:15px}
-.paymentMethod{border:1px solid #ddd;background:#fff;padding:14px 8px;text-align:center;font-size:12px}
-.paymentMethod.active{background:#000;color:#fff}
-.paymentInfo{background:#f4f4f4;padding:16px;margin-bottom:15px;line-height:1.6;font-size:13px}
-.recurrenteBtn{width:100%;margin-top:10px;background:#000;color:#fff;padding:15px;border:0;font-weight:bold}
+.formGroup label{
+display:block;
+font-size:12px;
+font-weight:bold;
+margin-bottom:6px
+}
 
-.adminTabs{display:flex;gap:7px;overflow:auto;margin-bottom:25px}
-.adminTab{border:1px solid #ddd;background:#fff;padding:10px 15px;white-space:nowrap}
-.adminTab.active{background:#000;color:#fff}
+.formGroup input,
+.formGroup textarea,
+.formGroup select{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+outline:none
+}
+
+.formGroup textarea{
+min-height:100px;
+resize:vertical
+}
+
+.formGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px
+}
+
+.paymentMethods{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+margin-bottom:15px
+}
+
+.paymentMethod{
+border:1px solid #ddd;
+background:#fff;
+padding:14px 8px;
+text-align:center;
+font-size:12px
+}
+
+.paymentMethod.active{
+background:#000;
+color:#fff
+}
+
+.paymentInfo{
+background:#f4f4f4;
+padding:16px;
+margin-bottom:15px;
+line-height:1.6;
+font-size:13px
+}
+
+.recurrenteBtn{
+width:100%;
+margin-top:10px;
+background:#000;
+color:#fff;
+padding:15px;
+border:0;
+font-weight:bold
+}
+
+.adminTabs{
+display:flex;
+gap:7px;
+overflow:auto;
+margin-bottom:25px
+}
+
+.adminTab{
+border:1px solid #ddd;
+background:#fff;
+padding:10px 15px;
+white-space:nowrap
+}
+
+.adminTab.active{
+background:#000;
+color:#fff
+}
+
 .adminSection{display:none}
 .adminSection.active{display:block}
 
-.adminProduct{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #eee;margin-bottom:9px}
-.adminProduct img{width:65px;height:65px;object-fit:cover}
+.adminProduct{
+display:flex;
+align-items:center;
+gap:12px;
+padding:12px;
+border:1px solid #eee;
+margin-bottom:9px
+}
+
+.adminProduct img{
+width:65px;
+height:65px;
+object-fit:cover
+}
+
 .adminProductInfo{flex:1}
-.adminActions{display:flex;gap:5px;flex-wrap:wrap}
-.adminActions button{padding:8px;border:1px solid #ddd;background:#fff}
-.statusAvailable{color:#087d2b;font-size:11px}
-.statusSold{color:#a40000;font-size:11px}
 
-.adminGalleryItem{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #eee;margin-bottom:8px}
-.adminGalleryItem img{width:80px;height:80px;object-fit:cover}
-.adminGalleryItem div{flex:1}
+.adminActions{
+display:flex;
+gap:5px;
+flex-wrap:wrap
+}
 
-/* FOTOS DEL PRODUCTO EN ADMIN */
+.adminActions button{
+padding:8px;
+border:1px solid #ddd;
+background:#fff
+}
+
+.statusAvailable{
+color:#087d2b;
+font-size:11px
+}
+
+.statusSold{
+color:#a40000;
+font-size:11px
+}
+
 .productImageManager{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
-  gap:12px;
-  margin-top:12px;
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+gap:12px;
+margin-top:12px
 }
 
 .productImageItem{
-  position:relative;
-  border:1px solid #ddd;
-  background:#f5f5f5;
-  padding:6px;
+position:relative;
+border:1px solid #ddd;
+background:#f5f5f5;
+padding:6px
 }
 
 .productImageItem img{
-  width:100%;
-  height:130px;
-  object-fit:cover;
+width:100%;
+height:130px;
+object-fit:cover
 }
 
 .productImageItem button{
-  width:100%;
-  margin-top:6px;
-  border:1px solid #ddd;
-  background:#fff;
-  padding:7px;
-  font-size:11px;
+width:100%;
+margin-top:6px;
+border:1px solid #ddd;
+background:#fff;
+padding:7px;
+font-size:11px
 }
 
 .productImageMain{
-  font-size:9px;
-  letter-spacing:1px;
-  background:#000;
-  color:#fff;
-  padding:5px;
-  text-align:center;
-  margin-bottom:5px;
+font-size:9px;
+letter-spacing:1px;
+background:#000;
+color:#fff;
+padding:5px;
+text-align:center;
+margin-bottom:5px
 }
 
 .imageCount{
-  font-size:11px;
-  color:#777;
-  margin-top:6px;
+font-size:11px;
+color:#777;
+margin-top:6px
 }
 
-.toast{position:fixed;z-index:6000;bottom:25px;left:50%;transform:translate(-50%,100px);background:#000;color:#fff;padding:14px 20px;border-radius:5px;opacity:0;transition:.3s}
-.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast{
+position:fixed;
+z-index:6000;
+bottom:25px;
+left:50%;
+transform:translate(-50%,100px);
+background:#000;
+color:#fff;
+padding:14px 20px;
+border-radius:5px;
+opacity:0;
+transition:.3s
+}
+
+.toast.show{
+opacity:1;
+transform:translate(-50%,0)
+}
 
 @media(max-width:1000px){
 .products{grid-template-columns:repeat(3,1fr)}
-.gallery{grid-template-columns:repeat(3,1fr)}
 }
 
 @media(max-width:750px){
+
 .nav{height:62px}
+
 .navlinks{display:none}
+
 .logo{font-size:20px}
+
 .hero{min-height:580px}
-.products{grid-template-columns:repeat(2,1fr);gap:12px}
+
+.products{
+grid-template-columns:repeat(2,1fr);
+gap:12px
+}
+
 .cardImg{height:250px}
-.gallery{grid-template-columns:repeat(2,1fr)}
-.galleryItem{height:210px}
+
 .infoGrid{grid-template-columns:1fr}
+
 .footer{grid-template-columns:1fr}
+
 .detail{grid-template-columns:1fr}
+
 .detailImage{height:380px}
+
 .formGrid{grid-template-columns:1fr}
+
 .paymentMethods{grid-template-columns:1fr}
 }
 
 @media(max-width:450px){
+
 section{padding:55px 14px}
-.products{grid-template-columns:1fr 1fr}
+
+.products{
+grid-template-columns:1fr 1fr
+}
+
 .cardImg{height:220px}
+
 .cardInfo{padding:12px}
+
 .cardName{font-size:15px}
+
 .cardButtons{flex-direction:column}
+
 .hero h1{letter-spacing:4px}
-.productImageManager{grid-template-columns:repeat(2,1fr)}
+
+.productImageManager{
+grid-template-columns:repeat(2,1fr)
+}
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar" id="topbar">ENVÍOS A TODA GUATEMALA</div>
+<div class="topbar" id="topbar">
+ENVÍOS A TODA GUATEMALA
+</div>
 
 <header>
 <nav class="nav">
+
 <div class="logo" id="logo">NyxFsm</div>
 
 <ul class="navlinks">
 <li><a href="#inicio">Inicio</a></li>
 <li><a href="#catalogo">Catálogo</a></li>
-<li><a href="#galeria">Galería</a></li>
 <li><a href="#envios">Envíos</a></li>
 <li><a href="#contacto">Contacto</a></li>
 </ul>
 
 <div class="navactions">
-<button class="icon" onclick="openCart()">🛒<span class="cartbadge" id="cartCount">0</span></button>
+
+<button class="icon" onclick="openCart()">
+🛒
+<span class="cartbadge" id="cartCount">0</span>
+</button>
+
 </div>
 </nav>
 </header>
 
+
+<!-- INICIO -->
+
 <section class="hero" id="inicio">
+
 <div class="heroContent">
-<div class="heroSmall">EXCLUSIVIDAD • ESTILO • ELEGANCIA</div>
+
+<div class="heroSmall">
+EXCLUSIVIDAD • ESTILO • ELEGANCIA
+</div>
+
 <h1 id="heroTitle">NyxFsm</h1>
-<p id="heroText">Descubre nuestra selección de productos con diseños exclusivos y una experiencia de compra moderna.</p>
-<a href="#catalogo"><button class="btn btnWhite">VER CATÁLOGO</button></a>
+
+<p id="heroText">
+Descubre nuestra selección de productos con diseños exclusivos y una experiencia de compra moderna.
+</p>
+
+<a href="#catalogo">
+<button class="btn btnWhite">
+VER CATÁLOGO
+</button>
+</a>
+
 </div>
 </section>
+
 
 <section class="promo">
-<h2 id="promoTitle">PROMOCIONES ESPECIALES</h2>
-<p id="promoText">Descubre nuestros productos y novedades.</p>
+
+<h2 id="promoTitle">
+PROMOCIONES ESPECIALES
+</h2>
+
+<p id="promoText">
+Descubre nuestros productos y novedades.
+</p>
+
 </section>
 
+
+<!-- CATÁLOGO -->
+
 <section id="catalogo">
+
 <div class="container">
+
 <div class="heading">
+
 <span>NUESTRA COLECCIÓN</span>
+
 <h2>Catálogo</h2>
+
 </div>
 
-<div class="categories" id="categories"></div>
 <div class="products" id="products"></div>
 
 </div>
+
 </section>
 
-<section id="galeria">
-<div class="container">
 
-<div class="heading">
-<span>DESCUBRE NUESTRA TIENDA</span>
-<h2>Galería</h2>
-</div>
-
-<div class="gallery" id="gallery"></div>
-
-</div>
-</section>
+<!-- PAGOS -->
 
 <section>
+
 <div class="container">
 
 <div class="heading">
+
 <span>COMPRA FÁCIL Y SEGURA</span>
+
 <h2>Métodos de pago</h2>
+
 </div>
 
 <div class="infoGrid">
 
 <div class="info">
+
 <div class="infoIcon">💳</div>
+
 <h3>Tarjeta</h3>
-<p>Paga mediante Recurrente de forma rápida y sencilla.</p>
+
+<p>
+Paga mediante Recurrente de forma rápida y sencilla.
+</p>
+
 </div>
 
+
 <div class="info">
+
 <div class="infoIcon">📲</div>
+
 <h3>Depósito bancario</h3>
-<p id="depositPublic">Consulta nuestras instrucciones de depósito.</p>
+
+<p id="depositPublic">
+Consulta nuestras instrucciones de depósito.
+</p>
+
 </div>
+
 
 <div class="info">
+
 <div class="infoIcon">🏦</div>
+
 <h3>Transferencia bancaria</h3>
-<p id="transferPublic">Consulta nuestras instrucciones de transferencia.</p>
+
+<p id="transferPublic">
+Consulta nuestras instrucciones de transferencia.
+</p>
+
 </div>
 
 </div>
 </div>
+
 </section>
+
+
+<!-- ENVIOS -->
 
 <section id="envios">
+
 <div class="container">
 
 <div class="heading">
+
 <span>ENTREGAMOS TU PEDIDO</span>
+
 <h2>Envíos</h2>
+
 </div>
 
 <div class="infoGrid">
 
 <div class="info">
+
 <div class="infoIcon">🚚</div>
+
 <h3>Cobertura</h3>
+
 <p id="shippingZones"></p>
+
 </div>
 
+
 <div class="info">
+
 <div class="infoIcon">💰</div>
+
 <h3>Costo</h3>
+
 <p id="shippingCost"></p>
+
 </div>
+
 
 <div class="info">
+
 <div class="infoIcon">⏱️</div>
+
 <h3>Entrega</h3>
+
 <p id="shippingTime"></p>
+
 </div>
 
 </div>
+
 </div>
+
 </section>
+
+
+<!-- CONTACTO -->
 
 <section id="contacto">
+
 <div class="container">
 
 <div class="heading">
+
 <span>ESTAMOS PARA AYUDARTE</span>
+
 <h2>Contacto</h2>
+
 </div>
 
 <div class="infoGrid">
 
 <div class="info">
+
 <div class="infoIcon">📸</div>
+
 <h3>Instagram</h3>
-<p>Síguenos y contáctanos directamente.</p>
+
+<p>
+Síguenos y contáctanos directamente.
+</p>
+
 <div class="social">
-<a id="instagramLink" href="https://www.instagram.com/" target="_blank" rel="noopener">◎</a>
-</div>
+
+<a
+id="instagramLink"
+href="#"
+target="_blank"
+rel="noopener">
+◎
+</a>
+
 </div>
 
+</div>
+
+
 <div class="info">
+
 <div class="infoIcon">🎵</div>
+
 <h3>TikTok</h3>
-<p>Mira nuestras novedades y productos.</p>
+
+<p>
+Mira nuestras novedades y productos.
+</p>
+
 <div class="social">
-<a id="tiktokLink" href="https://www.tiktok.com/" target="_blank" rel="noopener">♪</a>
+
+<a
+id="tiktokLink"
+href="#"
+target="_blank"
+rel="noopener">
+♪
+</a>
+
 </div>
+
 </div>
+
 
 <div class="info">
+
 <div class="infoIcon">📞</div>
+
 <h3>Contacto</h3>
-<p id="contactText">Escríbenos para obtener información.</p>
+
+<p id="contactText">
+Escríbenos para obtener información.
+</p>
+
 </div>
 
 </div>
+
 </div>
+
 </section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
 <div class="footer">
 
 <div>
-<div class="footerLogo" id="footerLogo">NyxFsm</div>
-<p>Tienda online de productos de la marca.</p>
+
+<div class="footerLogo" id="footerLogo">
+NyxFsm
 </div>
 
+<p>
+Tienda online de productos de la marca.
+</p>
+
+</div>
+
+
 <div>
+
 <h3>Navegación</h3>
+
 <a href="#inicio">Inicio</a>
+
 <a href="#catalogo">Catálogo</a>
-<a href="#galeria">Galería</a>
+
 <a href="#envios">Envíos</a>
+
+<a href="#contacto">Contacto</a>
+
 </div>
 
-<div>
-<h3>Redes sociales</h3>
-<a id="footerInstagram" target="_blank">Instagram</a>
-<a id="footerTiktok" target="_blank">TikTok</a>
 
-<button onclick="openAdminLogin()" style="margin-top:12px;border:0;background:none;color:#555;font-size:10px;">
+<div>
+
+<h3>Redes sociales</h3>
+
+<a id="footerInstagram" target="_blank">
+Instagram
+</a>
+
+<a id="footerTiktok" target="_blank">
+TikTok
+</a>
+
+<button
+onclick="openAdminLogin()"
+style="
+margin-top:12px;
+border:0;
+background:none;
+color:#555;
+font-size:10px;">
 Administración
 </button>
+
 </div>
 
 </div>
+
 
 <div class="copyright">
-© <span id="year"></span> NyxFsm. Todos los derechos reservados.
+
+© <span id="year"></span>
+NyxFsm. Todos los derechos reservados.
+
 </div>
 
 </footer>
@@ -435,39 +1091,65 @@ Administración
 
 <div class="modalBox modalLarge">
 
-<button class="close" onclick="closeModal('productModal')">×</button>
+<button
+class="close"
+onclick="closeModal('productModal')">
+×
+</button>
 
 <div class="detail">
 
 <div>
 
 <div class="detailImage">
+
 <img id="detailMainImage" src="" alt="">
+
 </div>
 
 <div class="thumbs" id="detailThumbs"></div>
 
 </div>
 
-<div>
 
-<div class="cardCat" id="detailCategory"></div>
+<div>
 
 <h2 id="detailName"></h2>
 
-<div class="detailPrice" id="detailPrice"></div>
+<div
+class="detailMaterial"
+id="detailMaterial">
+</div>
 
-<div class="detailDesc" id="detailDescription"></div>
+<div
+class="detailPrice"
+id="detailPrice">
+</div>
+
+<div
+class="detailDesc"
+id="detailDescription">
+</div>
 
 <div class="specs">
-<strong>Especificaciones</strong>
+
+<strong>
+Especificaciones
+</strong>
+
 <p id="detailSpecifications"></p>
+
 </div>
 
 <br>
 
-<button class="btn" id="detailButton" onclick="addDetailToCart()">
+<button
+class="btn"
+id="detailButton"
+onclick="addDetailToCart()">
+
 AGREGAR AL CARRITO
+
 </button>
 
 </div>
@@ -475,6 +1157,7 @@ AGREGAR AL CARRITO
 </div>
 
 </div>
+
 </div>
 
 
@@ -484,24 +1167,41 @@ AGREGAR AL CARRITO
 
 <div class="modalBox">
 
-<button class="close" onclick="closeModal('cartModal')">×</button>
+<button
+class="close"
+onclick="closeModal('cartModal')">
+×
+</button>
 
-<h2 class="modalTitle">Carrito de compras</h2>
+<h2 class="modalTitle">
+Carrito de compras
+</h2>
 
 <div id="cartItems"></div>
 
 <div class="total">
+
 <span>Total</span>
-<span id="cartTotal">Q0.00</span>
+
+<span id="cartTotal">
+Q0.00
+</span>
+
 </div>
 
 <br>
 
-<button class="btn" style="width:100%;" onclick="openCheckout()">
+<button
+class="btn"
+style="width:100%;"
+onclick="openCheckout()">
+
 CONTINUAR AL PAGO
+
 </button>
 
 </div>
+
 </div>
 
 
@@ -511,65 +1211,148 @@ CONTINUAR AL PAGO
 
 <div class="modalBox">
 
-<button class="close" onclick="closeModal('checkoutModal')">×</button>
+<button
+class="close"
+onclick="closeModal('checkoutModal')">
+×
+</button>
 
-<h2 class="modalTitle">Finalizar pedido</h2>
+<h2 class="modalTitle">
+Finalizar pedido
+</h2>
 
 <div class="formGrid">
 
 <div class="formGroup">
-<label>Nombre completo</label>
-<input id="customerName" placeholder="Tu nombre">
-</div>
 
-<div class="formGroup">
-<label>Teléfono</label>
-<input id="customerPhone" placeholder="Tu teléfono">
-</div>
-
-</div>
-
-<div class="formGroup">
-<label>Dirección</label>
-<textarea id="customerAddress" placeholder="Dirección completa de entrega"></textarea>
-</div>
-
-<label style="font-size:12px;font-weight:bold;display:block;margin-bottom:8px;">
-Método de pago
+<label>
+Nombre completo
 </label>
+
+<input
+id="customerName"
+placeholder="Tu nombre">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Teléfono
+</label>
+
+<input
+id="customerPhone"
+placeholder="Tu teléfono">
+
+</div>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Dirección
+</label>
+
+<textarea
+id="customerAddress"
+placeholder="Dirección completa de entrega">
+</textarea>
+
+</div>
+
+
+<label
+style="
+font-size:12px;
+font-weight:bold;
+display:block;
+margin-bottom:8px;">
+
+Método de pago
+
+</label>
+
 
 <div class="paymentMethods">
 
-<button class="paymentMethod active" id="payCard" onclick="selectPayment('card')">
+<button
+class="paymentMethod active"
+id="payCard"
+onclick="selectPayment('card')">
+
 💳<br>Tarjeta
+
 </button>
 
-<button class="paymentMethod" id="payDeposit" onclick="selectPayment('deposit')">
+
+<button
+class="paymentMethod"
+id="payDeposit"
+onclick="selectPayment('deposit')">
+
 📲<br>Depósito bancario
+
 </button>
 
-<button class="paymentMethod" id="payTransfer" onclick="selectPayment('transfer')">
+
+<button
+class="paymentMethod"
+id="payTransfer"
+onclick="selectPayment('transfer')">
+
 🏦<br>Transferencia
+
 </button>
 
 </div>
 
-<div class="paymentInfo" id="paymentInfo"></div>
 
-<button class="recurrenteBtn" onclick="payRecurrente()">
+<div
+class="paymentInfo"
+id="paymentInfo">
+</div>
+
+
+<button
+class="recurrenteBtn"
+onclick="payRecurrente()">
+
 💳 PAGAR CON RECURRENTE
+
 </button>
 
-<div class="formGroup" style="margin-top:15px;">
-<label>Comprobante de pago</label>
-<input type="file" id="paymentProof" accept="image/*,.pdf">
+
+<div
+class="formGroup"
+style="margin-top:15px;">
+
+<label>
+Comprobante de pago
+</label>
+
+<input
+type="file"
+id="paymentProof"
+accept="image/*,.pdf">
+
 </div>
 
-<button class="btn" style="width:100%;" onclick="sendOrder()">
+
+<button
+class="btn"
+style="width:100%;"
+onclick="sendOrder()">
+
 ENVIAR INFORMACIÓN DEL PEDIDO
+
 </button>
 
 </div>
+
 </div>
 
 
@@ -577,17 +1360,31 @@ ENVIAR INFORMACIÓN DEL PEDIDO
 
 <div class="modal" id="adminLoginModal">
 
-<div class="modalBox" style="max-width:400px;">
+<div
+class="modalBox"
+style="max-width:400px;">
 
-<button class="close" onclick="closeModal('adminLoginModal')">×</button>
+<button
+class="close"
+onclick="closeModal('adminLoginModal')">
+×
+</button>
 
-<h2 style="text-align:center;margin-bottom:25px;">
+<h2
+style="
+text-align:center;
+margin-bottom:25px;">
+
 ADMINISTRACIÓN
+
 </h2>
+
 
 <div class="formGroup">
 
-<label>Contraseña</label>
+<label>
+Contraseña
+</label>
 
 <input
 id="adminPassword"
@@ -596,11 +1393,18 @@ placeholder="Contraseña">
 
 </div>
 
-<button class="btn" style="width:100%;" onclick="loginAdmin()">
+
+<button
+class="btn"
+style="width:100%;"
+onclick="loginAdmin()">
+
 ENTRAR
+
 </button>
 
 </div>
+
 </div>
 
 
@@ -610,41 +1414,68 @@ ENTRAR
 
 <div class="modalBox modalLarge">
 
-<button class="close" onclick="logoutAdmin()">×</button>
+<button
+class="close"
+onclick="logoutAdmin()">
+×
+</button>
 
 <h2 class="modalTitle">
 Panel de administración
 </h2>
 
+
 <div class="adminTabs">
 
-<button class="adminTab active" onclick="adminTab('products',this)">
+<button
+class="adminTab active"
+onclick="adminTab('products',this)">
 Productos
 </button>
 
-<button class="adminTab" onclick="adminTab('gallery',this)">
-Galería
+
+<button
+class="adminTab"
+onclick="adminTab('inicio',this)">
+Inicio
 </button>
 
-<button class="adminTab" onclick="adminTab('design',this)">
-Diseño
+
+<button
+class="adminTab"
+onclick="adminTab('config',this)">
+⚙️ Configuración
 </button>
 
-<button class="adminTab" onclick="adminTab('shipping',this)">
+
+<button
+class="adminTab"
+onclick="adminTab('shipping',this)">
 Envíos
 </button>
 
-<button class="adminTab" onclick="adminTab('payments',this)">
+
+<button
+class="adminTab"
+onclick="adminTab('payments',this)">
 Pagos
 </button>
 
 </div>
 
 
-<div class="adminSection active" id="admin-products">
+<!-- PRODUCTOS -->
 
-<button class="btn" onclick="newProduct()">
+<div
+class="adminSection active"
+id="admin-products">
+
+<button
+class="btn"
+onclick="newProduct()">
+
 ➕ AGREGAR PRODUCTO
+
 </button>
 
 <br><br>
@@ -654,152 +1485,282 @@ Pagos
 </div>
 
 
-<div class="adminSection" id="admin-gallery">
+<!-- INICIO -->
+
+<div
+class="adminSection"
+id="admin-inicio">
 
 <div class="formGroup">
 
-<label>Agregar fotografías</label>
+<label>
+Fondo de Inicio
+</label>
 
 <input
 type="file"
-id="galleryFiles"
-accept="image/*"
-multiple>
+id="heroBackground"
+accept="image/*">
 
 </div>
 
-<button class="btn" onclick="uploadGallery()">
-AGREGAR IMÁGENES
+
+<div class="formGroup">
+
+<label>
+O usar una URL de imagen
+</label>
+
+<input
+id="heroBackgroundUrl"
+placeholder="https://...">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Título de Inicio
+</label>
+
+<input id="setHeroTitle">
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Texto de Inicio
+</label>
+
+<textarea id="setHeroText"></textarea>
+
+</div>
+
+
+<div class="formGroup">
+
+<label>
+Texto de promociones
+</label>
+
+<textarea id="setPromoText"></textarea>
+
+</div>
+
+
+<button
+class="btn"
+onclick="saveInicio()">
+
+💾 GUARDAR INICIO
+
 </button>
 
-<br><br>
-
-<div id="adminGallery"></div>
-
 </div>
 
 
-<div class="adminSection" id="admin-design">
+<!-- CONFIGURACIÓN -->
+
+<div
+class="adminSection"
+id="admin-config">
 
 <div class="formGroup">
-<label>Nombre de la tienda</label>
+
+<label>
+Nombre de la tienda
+</label>
+
 <input id="setBrand">
+
 </div>
 
-<div class="formGroup">
-<label>Título de portada</label>
-<input id="setHeroTitle">
-</div>
-
-<div class="formGroup">
-<label>Texto de portada</label>
-<textarea id="setHeroText"></textarea>
-</div>
-
-<div class="formGroup">
-<label>Texto de promociones</label>
-<textarea id="setPromoText"></textarea>
-</div>
-
-<div class="formGroup">
-<label>Fondo de la portada</label>
-<input type="file" id="heroBackground" accept="image/*">
-</div>
-
-<div class="formGroup">
-<label>O usar una URL de imagen</label>
-<input id="heroBackgroundUrl" placeholder="https://...">
-</div>
 
 <div class="formGrid">
 
 <div class="formGroup">
-<label>Instagram</label>
-<input id="setInstagram" placeholder="@usuario o enlace">
+
+<label>
+Instagram
+</label>
+
+<input
+id="setInstagram"
+placeholder="@usuario o enlace">
+
 </div>
+
 
 <div class="formGroup">
-<label>TikTok</label>
-<input id="setTikTok" placeholder="@usuario o enlace">
+
+<label>
+TikTok
+</label>
+
+<input
+id="setTikTok"
+placeholder="@usuario o enlace">
+
 </div>
 
 </div>
+
 
 <div class="formGroup">
-<label>Información de contacto</label>
+
+<label>
+Información de contacto
+</label>
+
 <textarea id="setContact"></textarea>
+
 </div>
 
-<button class="btn" onclick="saveDesign()">
-💾 GUARDAR DISEÑO
+
+<button
+class="btn"
+onclick="saveConfig()">
+
+💾 GUARDAR CONFIGURACIÓN
+
 </button>
 
 </div>
 
 
-<div class="adminSection" id="admin-shipping">
+<!-- ENVIOS -->
+
+<div
+class="adminSection"
+id="admin-shipping">
 
 <div class="formGroup">
-<label>Mensaje superior de envíos</label>
-<input id="setShippingTop" placeholder="Envíos a toda Guatemala">
+
+<label>
+Mensaje superior de envíos
+</label>
+
+<input
+id="setShippingTop"
+placeholder="Envíos a toda Guatemala">
+
 </div>
 
+
 <div class="formGroup">
-<label>Zonas de cobertura</label>
+
+<label>
+Zonas de cobertura
+</label>
+
 <textarea id="setZones"></textarea>
+
 </div>
 
+
 <div class="formGroup">
-<label>Costo de envío</label>
+
+<label>
+Costo de envío
+</label>
+
 <textarea id="setShippingCost"></textarea>
+
 </div>
 
+
 <div class="formGroup">
-<label>Tiempo de entrega</label>
+
+<label>
+Tiempo de entrega
+</label>
+
 <textarea id="setShippingTime"></textarea>
+
 </div>
 
-<button class="btn" onclick="saveShipping()">
+
+<button
+class="btn"
+onclick="saveShipping()">
+
 💾 GUARDAR ENVÍOS
+
 </button>
 
 </div>
 
 
-<div class="adminSection" id="admin-payments">
+<!-- PAGOS -->
+
+<div
+class="adminSection"
+id="admin-payments">
 
 <div class="formGroup">
-<label>🔗 Enlace de Recurrente</label>
-<input id="setRecurrente" placeholder="https://app.recurrente.com/...">
+
+<label>
+🔗 Enlace de Recurrente
+</label>
+
+<input
+id="setRecurrente"
+placeholder="https://app.recurrente.com/...">
+
 </div>
 
-<p style="font-size:12px;color:#777;margin-bottom:15px;">
-Este enlace será utilizado por los tres métodos:
-Tarjeta, Depósito bancario y Transferencia bancaria.
-</p>
 
-<div class="formGroup">
-<label>💳 Instrucciones para tarjeta</label>
+<div
+class="formGroup">
+
+<label>
+💳 Instrucciones para tarjeta
+</label>
+
 <textarea id="setCardInstructions"></textarea>
+
 </div>
 
-<div class="formGroup">
-<label>📲 Datos / instrucciones de depósito</label>
+
+<div
+class="formGroup">
+
+<label>
+📲 Datos / instrucciones de depósito
+</label>
+
 <textarea id="setDepositInstructions"></textarea>
+
 </div>
 
-<div class="formGroup">
-<label>🏦 Datos / instrucciones de transferencia</label>
+
+<div
+class="formGroup">
+
+<label>
+🏦 Datos / instrucciones de transferencia
+</label>
+
 <textarea id="setTransferInstructions"></textarea>
+
 </div>
 
-<button class="btn" onclick="savePayments()">
+
+<button
+class="btn"
+onclick="savePayments()">
+
 💾 GUARDAR MÉTODOS DE PAGO
+
 </button>
 
 </div>
 
 </div>
+
 </div>
 
 
@@ -809,37 +1770,72 @@ Tarjeta, Depósito bancario y Transferencia bancaria.
 
 <div class="modalBox modalLarge">
 
-<button class="close" onclick="closeModal('productEditor')">×</button>
+<button
+class="close"
+onclick="closeModal('productEditor')">
+×
+</button>
 
 <h2 class="modalTitle">
 Editar producto
 </h2>
 
-<input type="hidden" id="editProductId">
+
+<input
+type="hidden"
+id="editProductId">
+
 
 <div class="formGrid">
 
 <div class="formGroup">
-<label>Nombre</label>
+
+<label>
+Nombre
+</label>
+
 <input id="productName">
+
 </div>
+
 
 <div class="formGroup">
-<label>Precio Q</label>
-<input id="productPrice" type="number" step="0.01" min="0">
+
+<label>
+Material
+</label>
+
+<input
+id="productMaterial"
+placeholder="Ej. Algodón">
+
 </div>
 
 </div>
+
 
 <div class="formGrid">
 
 <div class="formGroup">
-<label>Categoría</label>
-<input id="productCategory" placeholder="Camisas o Pantalones">
+
+<label>
+Precio Q
+</label>
+
+<input
+id="productPrice"
+type="number"
+step="0.01"
+min="0">
+
 </div>
 
+
 <div class="formGroup">
-<label>Disponibilidad</label>
+
+<label>
+Disponibilidad
+</label>
 
 <select id="productStock">
 
@@ -857,28 +1853,34 @@ Editar producto
 
 </div>
 
+
 <div class="formGroup">
 
-<label>Descripción</label>
+<label>
+Descripción
+</label>
 
 <textarea id="productDescription"></textarea>
 
 </div>
 
+
 <div class="formGroup">
 
-<label>Especificaciones</label>
+<label>
+Especificaciones
+</label>
 
 <textarea id="productSpecifications"></textarea>
 
 </div>
 
 
-<!-- ADMINISTRADOR DE FOTOS -->
-
 <div class="formGroup">
 
-<label>Fotografías del producto</label>
+<label>
+Fotografías del producto
+</label>
 
 <input
 type="file"
@@ -886,9 +1888,15 @@ id="productImages"
 accept="image/*"
 multiple>
 
-<div class="imageCount" id="productImageCount">
+
+<div
+class="imageCount"
+id="productImageCount">
+
 0 fotografías
+
 </div>
+
 
 <div
 class="productImageManager"
@@ -898,22 +1906,26 @@ id="productImageManager">
 </div>
 
 
-<button class="btn" onclick="saveProduct()">
+<button
+class="btn"
+onclick="saveProduct()">
+
 💾 GUARDAR PRODUCTO
+
 </button>
 
 </div>
+
 </div>
 
 
-<div class="toast" id="toast"></div>
+<div
+class="toast"
+id="toast">
+</div>
 
 
 <script>
-
-/* ==========================================================
-   CONFIGURACIÓN
-========================================================== */
 
 const ADMIN_PASSWORD = "nyx26";
 
@@ -926,2740 +1938,1913 @@ const DEFAULT_HERO =
 
 function readStorage(key,fallback){
 
-  try{
+try{
 
-    const value =
-      localStorage.getItem(key);
+const value=localStorage.getItem(key);
 
-    return value
-      ? JSON.parse(value)
-      : fallback;
+return value
+?JSON.parse(value)
+:fallback;
 
-  }catch(error){
+}catch(error){
 
-    console.error(
-      "Error leyendo almacenamiento:",
-      error
-    );
+return fallback;
 
-    return fallback;
-  }
+}
+
 }
 
 
-let settings =
-readStorage("nyxSettings",{
+let settings=readStorage("nyxSettings",{
 
-  brand:"NyxFsm",
+brand:"NyxFsm",
 
-  heroTitle:"NyxFsm",
+heroTitle:"NyxFsm",
 
-  heroText:
-  "Descubre nuestra selección de productos con diseños exclusivos y una experiencia de compra moderna.",
+heroText:
+"Descubre nuestra selección de productos con diseños exclusivos y una experiencia de compra moderna.",
 
-  promoTitle:
-  "PROMOCIONES ESPECIALES",
+promoTitle:"PROMOCIONES ESPECIALES",
 
-  promoText:
-  "Descubre nuestros productos y novedades.",
+promoText:
+"Descubre nuestros productos y novedades.",
 
-  instagram:
-  "https://www.instagram.com/6.Nyx.77/",
+instagram:
+"https://www.instagram.com/6.Nyx.77/",
 
-  tiktok:
-  "https://www.tiktok.com/",
+tiktok:
+"https://www.tiktok.com/",
 
-  contact:
-  "Escríbenos para obtener información.",
+contact:
+"Escríbenos para obtener información.",
 
-  heroBackground:""
+heroBackground:""
+
 });
 
 
-let shipping =
-readStorage("nyxShipping",{
+let shipping=readStorage("nyxShipping",{
 
-  top:
-  "ENVÍOS A TODA GUATEMALA",
+top:"ENVÍOS A TODA GUATEMALA",
 
-  zones:
-  "Envíos a toda Guatemala.",
+zones:"Envíos a toda Guatemala.",
 
-  cost:
-  "Consulta el costo de envío.",
+cost:"Consulta el costo de envío.",
 
-  time:
-  "Los tiempos de entrega dependen de la ubicación."
+time:"Los tiempos de entrega dependen de la ubicación."
+
 });
 
 
-let payments =
-readStorage("nyxPayments",{
+let payments=readStorage("nyxPayments",{
 
-  recurrente:
-  DEFAULT_RECURRENT,
+recurrente:DEFAULT_RECURRENT,
 
-  card:
-  "Selecciona esta opción para pagar con tarjeta mediante Recurrente.",
+card:
+"Selecciona esta opción para pagar con tarjeta mediante Recurrente.",
 
-  deposit:
-  "Realiza tu depósito utilizando los datos bancarios proporcionados por la tienda y envía tu comprobante.",
+deposit:
+"Realiza tu depósito utilizando los datos bancarios proporcionados por la tienda y envía tu comprobante.",
 
-  transfer:
-  "Realiza la transferencia utilizando los datos bancarios proporcionados por la tienda y envía tu comprobante."
+transfer:
+"Realiza la transferencia utilizando los datos bancarios proporcionados por la tienda y envía tu comprobante."
+
 });
 
 
-let products =
-readStorage("nyxProducts",[]);
+let products=readStorage("nyxProducts",[]);
 
-let gallery =
-readStorage("nyxGallery",[]);
+let cart=readStorage("nyxCart",[]);
 
-let cart =
-readStorage("nyxCart",[]);
+let currentProduct=null;
 
+let selectedPayment="card";
 
-let selectedCategory = "Todos";
-let currentProduct = null;
-let selectedPayment = "card";
-
-
-/* ==========================================================
-   INICIO
-========================================================== */
 
 document.addEventListener("DOMContentLoaded",()=>{
 
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
+document.getElementById("year").textContent=
+new Date().getFullYear();
 
-  applySettings();
+applySettings();
 
-  renderCategories();
+renderProducts();
 
-  renderProducts();
+updateCartCount();
 
-  renderGallery();
-
-  updateCartCount();
-
-  selectPayment("card");
+selectPayment("card");
 
 });
 
 
-/* ==========================================================
-   GUARDAR TODO
-========================================================== */
-
 function saveAll(){
 
-  localStorage.setItem(
-    "nyxSettings",
-    JSON.stringify(settings)
-  );
+localStorage.setItem(
+"nyxSettings",
+JSON.stringify(settings)
+);
 
-  localStorage.setItem(
-    "nyxShipping",
-    JSON.stringify(shipping)
-  );
+localStorage.setItem(
+"nyxShipping",
+JSON.stringify(shipping)
+);
 
-  localStorage.setItem(
-    "nyxPayments",
-    JSON.stringify(payments)
-  );
+localStorage.setItem(
+"nyxPayments",
+JSON.stringify(payments)
+);
 
-  localStorage.setItem(
-    "nyxProducts",
-    JSON.stringify(products)
-  );
+localStorage.setItem(
+"nyxProducts",
+JSON.stringify(products)
+);
 
-  localStorage.setItem(
-    "nyxGallery",
-    JSON.stringify(gallery)
-  );
+localStorage.setItem(
+"nyxCart",
+JSON.stringify(cart)
+);
 
-  localStorage.setItem(
-    "nyxCart",
-    JSON.stringify(cart)
-  );
 }
 
 
-/* ==========================================================
-   APLICAR CONFIGURACIÓN
-========================================================== */
-
 function applySettings(){
 
-  document.getElementById("logo").textContent =
-    settings.brand || "NyxFsm";
+document.getElementById("logo").textContent=
+settings.brand||"NyxFsm";
 
-  document.getElementById("footerLogo").textContent =
-    settings.brand || "NyxFsm";
+document.getElementById("footerLogo").textContent=
+settings.brand||"NyxFsm";
 
-  document.title =
-    settings.brand || "NyxFsm";
+document.title=
+settings.brand||"NyxFsm";
 
-  document.getElementById("heroTitle").textContent =
-    settings.heroTitle || settings.brand || "NyxFsm";
+document.getElementById("heroTitle").textContent=
+settings.heroTitle||settings.brand||"NyxFsm";
 
-  document.getElementById("heroText").textContent =
-    settings.heroText || "";
+document.getElementById("heroText").textContent=
+settings.heroText||"";
 
-  document.getElementById("promoTitle").textContent =
-    settings.promoTitle || "PROMOCIONES ESPECIALES";
+document.getElementById("promoTitle").textContent=
+settings.promoTitle||"PROMOCIONES ESPECIALES";
 
-  document.getElementById("promoText").textContent =
-    settings.promoText || "";
+document.getElementById("promoText").textContent=
+settings.promoText||"";
 
-  document.getElementById("contactText").textContent =
-    settings.contact || "";
+document.getElementById("contactText").textContent=
+settings.contact||"";
 
-  document.getElementById("topbar").textContent =
-    shipping.top || "";
+document.getElementById("topbar").textContent=
+shipping.top||"";
 
-  if(settings.heroBackground){
+if(settings.heroBackground){
 
-    document.querySelector(".hero").style.backgroundImage =
-      "url('" +
-      String(settings.heroBackground)
-        .replace(/'/g,"%27") +
-      "')";
+document.querySelector(".hero").style.backgroundImage=
+"url('"+
+String(settings.heroBackground).replace(/'/g,"%27")+
+"')";
 
-  }else{
+}else{
 
-    document.querySelector(".hero").style.backgroundImage =
-      "url('" +
-      DEFAULT_HERO +
-      "')";
+document.querySelector(".hero").style.backgroundImage=
+"url('"+DEFAULT_HERO+"')";
 
-  }
+}
 
-  setSocialLink(
-    "instagramLink",
-    settings.instagram
-  );
+setSocialLink("instagramLink",settings.instagram);
 
-  setSocialLink(
-    "footerInstagram",
-    settings.instagram
-  );
+setSocialLink("footerInstagram",settings.instagram);
 
-  setSocialLink(
-    "tiktokLink",
-    settings.tiktok
-  );
+setSocialLink("tiktokLink",settings.tiktok);
 
-  setSocialLink(
-    "footerTiktok",
-    settings.tiktok
-  );
+setSocialLink("footerTiktok",settings.tiktok);
 
-  document.getElementById("shippingZones").textContent =
-    shipping.zones || "";
+document.getElementById("shippingZones").textContent=
+shipping.zones||"";
 
-  document.getElementById("shippingCost").textContent =
-    shipping.cost || "";
+document.getElementById("shippingCost").textContent=
+shipping.cost||"";
 
-  document.getElementById("shippingTime").textContent =
-    shipping.time || "";
+document.getElementById("shippingTime").textContent=
+shipping.time||"";
 
-  document.getElementById("depositPublic").textContent =
-    payments.deposit || "";
+document.getElementById("depositPublic").textContent=
+payments.deposit||"";
 
-  document.getElementById("transferPublic").textContent =
-    payments.transfer || "";
+document.getElementById("transferPublic").textContent=
+payments.transfer||"";
+
 }
 
 
 function setSocialLink(id,value){
 
-  const element =
-    document.getElementById(id);
+const element=document.getElementById(id);
 
-  if(!element)return;
+if(!element)return;
 
-  let url =
-    String(value || "").trim();
+let url=String(value||"").trim();
 
-  if(
-    url &&
-    !/^https?:\/\//i.test(url)
-  ){
+if(url&&!/^https?:\/\//i.test(url)){
 
-    if(
-      id.toLowerCase()
-        .includes("instagram")
-    ){
+if(id.toLowerCase().includes("instagram")){
 
-      url =
-        "https://www.instagram.com/" +
-        url.replace(/^@/,"") +
-        "/";
+url=
+"https://www.instagram.com/"+
+url.replace(/^@/,"")+"/";
 
-    }else{
+}else{
 
-      url =
-        "https://www.tiktok.com/@" +
-        url.replace(/^@/,"");
+url=
+"https://www.tiktok.com/@"+
+url.replace(/^@/,"");
 
-    }
-  }
+}
 
-  element.href =
-    url || "#";
+}
+
+element.href=url||"#";
+
 }
 
 
-/* ==========================================================
-   CATEGORÍAS
-========================================================== */
-
-function renderCategories(){
-
-  const container =
-    document.getElementById("categories");
-
-  const categories = [
-    "Todos",
-    ...new Set(
-
-      products
-        .map(p=>
-          String(
-            p.category || ""
-          ).trim()
-        )
-        .filter(Boolean)
-
-    )
-  ];
-
-  if(!categories.includes(selectedCategory)){
-    selectedCategory = "Todos";
-  }
-
-  container.innerHTML =
-    categories.map(cat=>`
-
-      <button
-        class="category ${
-          cat === selectedCategory
-          ? "active"
-          : ""
-        }"
-        data-category="${escapeAttr(cat)}">
-
-        ${escapeHtml(cat)}
-
-      </button>
-
-    `).join("");
-
-  container
-    .querySelectorAll(".category")
-    .forEach(button=>{
-
-      button.addEventListener(
-        "click",
-        ()=>{
-          filterCategory(
-            button.dataset.category
-          );
-        }
-      );
-
-    });
-}
-
-
-function filterCategory(category){
-
-  selectedCategory =
-    category;
-
-  renderCategories();
-
-  renderProducts();
-}
-
-
-/* ==========================================================
-   PRODUCTOS
-========================================================== */
+/* PRODUCTOS */
 
 function normalizeProductImages(product){
 
-  if(
-    Array.isArray(product.images) &&
-    product.images.length
-  ){
+if(
+Array.isArray(product.images)&&
+product.images.length
+){
 
-    return product.images.filter(Boolean);
+return product.images.filter(Boolean);
 
-  }
+}
 
-  if(product.image){
+if(product.image){
 
-    return [product.image];
+return [product.image];
 
-  }
+}
 
-  return [];
+return [];
+
 }
 
 
 function renderProducts(){
 
-  const container =
-    document.getElementById("products");
+const container=
+document.getElementById("products");
 
-  let list =
-    products;
+if(!products.length){
 
-  if(selectedCategory !== "Todos"){
+container.innerHTML=`
 
-    list =
-      products.filter(
-        p =>
-          p.category === selectedCategory
-      );
+<div style="
+grid-column:1/-1;
+text-align:center;
+padding:50px;
+color:#777;">
 
-  }
+Aún no hay productos publicados.
 
-  if(!list.length){
+</div>
 
-    container.innerHTML = `
+`;
 
-      <div style="
-        grid-column:1/-1;
-        text-align:center;
-        padding:50px;
-        color:#777;">
+return;
 
-        Aún no hay productos publicados.
+}
 
-      </div>
+container.innerHTML=
+products.map(product=>{
 
-    `;
+const sold=
+product.stock==="sold";
 
-    return;
-  }
+const images=
+normalizeProductImages(product);
 
-  container.innerHTML =
-    list.map(product=>{
+const image=
+images[0]||DEFAULT_HERO;
 
-      const sold =
-        product.stock === "sold";
+return`
 
-      const images =
-        normalizeProductImages(product);
+<article class="card">
 
-      const image =
-        images[0] ||
-        DEFAULT_HERO;
+<div class="cardImg">
 
-      return `
+<img
+src="${escapeAttr(image)}"
+alt="${escapeAttr(product.name)}">
 
-        <article class="card">
+<div class="badge ${sold?"badgeSold":""}">
 
-          <div class="cardImg">
+${sold?"AGOTADO":"DISPONIBLE"}
 
-            <img
-              src="${escapeAttr(image)}"
-              alt="${escapeAttr(product.name)}">
+</div>
 
-            <div class="badge ${
-              sold
-              ? "badgeSold"
-              : ""
-            }">
+</div>
 
-              ${
-                sold
-                ? "AGOTADO"
-                : "DISPONIBLE"
-              }
 
-            </div>
+<div class="cardInfo">
 
-          </div>
+<h3 class="cardName">
+${escapeHtml(product.name||"")}
+</h3>
 
-          <div class="cardInfo">
+<div class="cardMaterial">
+<strong>Material:</strong>
+${escapeHtml(product.material||"No especificado")}
+</div>
 
-            <div class="cardCat">
-              ${escapeHtml(
-                product.category || ""
-              )}
-            </div>
+<p class="cardDesc">
+${escapeHtml(product.description||"")}
+</p>
 
-            <h3 class="cardName">
-              ${escapeHtml(
-                product.name || ""
-              )}
-            </h3>
+<div class="price">
+Q${Number(product.price||0).toFixed(2)}
+</div>
 
-            <p class="cardDesc">
-              ${escapeHtml(
-                product.description || ""
-              )}
-            </p>
 
-            <div class="price">
-              Q${Number(
-                product.price || 0
-              ).toFixed(2)}
-            </div>
+<div class="cardButtons">
 
-            <div class="cardButtons">
+<button
+class="btn btnOutline"
+onclick="openProduct(${Number(product.id)})">
 
-              <button
-                class="btn btnOutline"
-                onclick="openProduct(${Number(product.id)})">
+VER
 
-                VER
+</button>
 
-              </button>
 
-              <button
-                class="btn ${
-                  sold
-                  ? "disabled"
-                  : ""
-                }"
-                ${sold ? "disabled" : ""}
-                onclick="addToCart(${Number(product.id)})">
+<button
+class="btn ${sold?"disabled":""}"
+${sold?"disabled":""}
+onclick="addToCart(${Number(product.id)})">
 
-                ${
-                  sold
-                  ? "AGOTADO"
-                  : "AGREGAR"
-                }
+${sold?"AGOTADO":"AGREGAR"}
 
-              </button>
+</button>
 
-            </div>
+</div>
 
-          </div>
+</div>
 
-        </article>
+</article>
 
-      `;
+`;
 
-    }).join("");
+}).join("");
+
 }
 
 
-/* ==========================================================
-   DETALLE DEL PRODUCTO
-========================================================== */
+/* DETALLE */
 
 function openProduct(id){
 
-  const product =
-    products.find(
-      p =>
-        Number(p.id) === Number(id)
-    );
+const product=
+products.find(
+p=>Number(p.id)===Number(id)
+);
 
-  if(!product)return;
+if(!product)return;
 
-  currentProduct =
-    product;
+currentProduct=product;
 
-  document.getElementById(
-    "detailCategory"
-  ).textContent =
-    product.category || "";
+document.getElementById("detailName").textContent=
+product.name||"";
 
-  document.getElementById(
-    "detailName"
-  ).textContent =
-    product.name || "";
+document.getElementById("detailMaterial").innerHTML=
+"<strong>Material:</strong> "+
+escapeHtml(product.material||"No especificado");
 
-  document.getElementById(
-    "detailPrice"
-  ).textContent =
-    "Q" +
-    Number(
-      product.price || 0
-    ).toFixed(2);
+document.getElementById("detailPrice").textContent=
+"Q"+Number(product.price||0).toFixed(2);
 
-  document.getElementById(
-    "detailDescription"
-  ).textContent =
-    product.description || "";
+document.getElementById("detailDescription").textContent=
+product.description||"";
 
-  document.getElementById(
-    "detailSpecifications"
-  ).textContent =
-    product.specifications ||
-    "No especificado.";
+document.getElementById("detailSpecifications").textContent=
+product.specifications||"No especificado.";
 
-  const images =
-    normalizeProductImages(product);
+const images=
+normalizeProductImages(product);
 
-  const mainImage =
-    images[0] ||
-    DEFAULT_HERO;
+document.getElementById("detailMainImage").src=
+images[0]||DEFAULT_HERO;
 
-  document.getElementById(
-    "detailMainImage"
-  ).src =
-    mainImage;
+const thumbs=
+document.getElementById("detailThumbs");
 
-  const thumbs =
-    document.getElementById(
-      "detailThumbs"
-    );
+thumbs.innerHTML=
+images.map((img,index)=>`
 
-  thumbs.innerHTML =
-    images.map((img,index)=>`
+<img
+class="thumb ${index===0?"active":""}"
+src="${escapeAttr(img)}"
+alt="Imagen ${index+1}"
+data-image="${escapeAttr(img)}">
 
-      <img
-        class="thumb ${
-          index === 0
-          ? "active"
-          : ""
-        }"
-        src="${escapeAttr(img)}"
-        alt="Imagen ${index+1}"
-        data-image="${escapeAttr(img)}">
+`).join("");
 
-    `).join("");
+thumbs
+.querySelectorAll(".thumb")
+.forEach(thumb=>{
 
-  thumbs
-    .querySelectorAll(".thumb")
-    .forEach(thumb=>{
+thumb.addEventListener("click",()=>{
 
-      thumb.addEventListener(
-        "click",
-        ()=>{
-          changeDetailImage(
-            thumb.dataset.image,
-            thumb
-          );
-        }
-      );
+changeDetailImage(
+thumb.dataset.image,
+thumb
+);
 
-    });
+});
 
-  const btn =
-    document.getElementById(
-      "detailButton"
-    );
+});
 
-  if(product.stock === "sold"){
 
-    btn.disabled = true;
-    btn.className =
-      "btn disabled";
-    btn.textContent =
-      "AGOTADO";
+const btn=
+document.getElementById("detailButton");
 
-  }else{
+if(product.stock==="sold"){
 
-    btn.disabled = false;
-    btn.className =
-      "btn";
-    btn.textContent =
-      "AGREGAR AL CARRITO";
+btn.disabled=true;
+btn.className="btn disabled";
+btn.textContent="AGOTADO";
 
-  }
+}else{
 
-  openModal("productModal");
+btn.disabled=false;
+btn.className="btn";
+btn.textContent="AGREGAR AL CARRITO";
+
+}
+
+openModal("productModal");
+
 }
 
 
-function changeDetailImage(
-  src,
-  element
-){
+function changeDetailImage(src,element){
 
-  document.getElementById(
-    "detailMainImage"
-  ).src =
-    src;
+document.getElementById("detailMainImage").src=src;
 
-  document
-    .querySelectorAll(
-      "#detailThumbs .thumb"
-    )
-    .forEach(x=>
-      x.classList.remove("active")
-    );
+document
+.querySelectorAll("#detailThumbs .thumb")
+.forEach(x=>x.classList.remove("active"));
 
-  if(element){
-    element.classList.add("active");
-  }
+if(element)element.classList.add("active");
+
 }
 
 
 function addDetailToCart(){
 
-  if(currentProduct){
+if(currentProduct){
 
-    addToCart(
-      currentProduct.id
-    );
+addToCart(currentProduct.id);
 
-  }
+}
+
 }
 
 
-/* ==========================================================
-   CARRITO
-========================================================== */
+/* CARRITO */
 
 function addToCart(id){
 
-  const product =
-    products.find(
-      p =>
-        Number(p.id) === Number(id)
-    );
+const product=
+products.find(
+p=>Number(p.id)===Number(id)
+);
 
-  if(!product)return;
+if(!product)return;
 
-  if(product.stock === "sold"){
+if(product.stock==="sold"){
 
-    showToast(
-      "Este producto está agotado."
-    );
+showToast("Este producto está agotado.");
 
-    return;
-  }
+return;
 
-  let item =
-    cart.find(
-      x =>
-        Number(x.id) === Number(id)
-    );
+}
 
-  if(item){
+let item=
+cart.find(
+x=>Number(x.id)===Number(id)
+);
 
-    item.quantity++;
+if(item){
 
-  }else{
+item.quantity++;
 
-    cart.push({
-      id:Number(id),
-      quantity:1
-    });
+}else{
 
-  }
+cart.push({
+id:Number(id),
+quantity:1
+});
 
-  saveAll();
+}
 
-  updateCartCount();
+saveAll();
 
-  showToast(
-    "Producto agregado al carrito."
-  );
+updateCartCount();
+
+showToast("Producto agregado al carrito.");
+
 }
 
 
 function updateCartCount(){
 
-  const count =
-    cart.reduce(
-      (total,item)=>
-        total +
-        Number(
-          item.quantity || 0
-        ),
-      0
-    );
+const count=
+cart.reduce(
+(total,item)=>
+total+Number(item.quantity||0),
+0
+);
 
-  document.getElementById(
-    "cartCount"
-  ).textContent =
-    count;
+document.getElementById("cartCount").textContent=
+count;
+
 }
 
 
 function openCart(){
 
-  renderCart();
+renderCart();
 
-  openModal(
-    "cartModal"
-  );
+openModal("cartModal");
+
 }
 
 
 function renderCart(){
 
-  const container =
-    document.getElementById(
-      "cartItems"
-    );
+const container=
+document.getElementById("cartItems");
 
-  if(!cart.length){
+if(!cart.length){
 
-    container.innerHTML =
-      "<p>Tu carrito está vacío.</p>";
+container.innerHTML=
+"<p>Tu carrito está vacío.</p>";
 
-    document.getElementById(
-      "cartTotal"
-    ).textContent =
-      "Q0.00";
+document.getElementById("cartTotal").textContent=
+"Q0.00";
 
-    return;
-  }
+return;
 
-  let total = 0;
+}
 
-  const validItems = [];
+let total=0;
 
-  cart.forEach(item=>{
+const validItems=[];
 
-    const product =
-      products.find(
-        p =>
-          Number(p.id) ===
-          Number(item.id)
-      );
+cart.forEach(item=>{
 
-    if(!product)return;
+const product=
+products.find(
+p=>Number(p.id)===Number(item.id)
+);
 
-    validItems.push(item);
+if(!product)return;
 
-    total +=
-      Number(product.price || 0) *
-      Number(item.quantity || 0);
+if(product.stock==="sold")return;
 
-  });
+validItems.push(item);
 
-  cart =
-    validItems;
+total+=
+Number(product.price||0)*
+Number(item.quantity||0);
 
-  container.innerHTML =
-    cart.map(item=>{
+});
 
-      const product =
-        products.find(
-          p =>
-            Number(p.id) ===
-            Number(item.id)
-        );
+cart=validItems;
 
-      if(!product)return "";
+if(!cart.length){
 
-      const quantity =
-        Number(
-          item.quantity || 1
-        );
+container.innerHTML=
+"<p>Tu carrito está vacío.</p>";
 
-      const price =
-        Number(
-          product.price || 0
-        );
+document.getElementById("cartTotal").textContent=
+"Q0.00";
 
-      const images =
-        normalizeProductImages(
-          product
-        );
+saveAll();
 
-      return `
+return;
 
-        <div class="cartItem">
+}
 
-          <img
-            src="${escapeAttr(
-              images[0] ||
-              DEFAULT_HERO
-            )}"
-            alt="${escapeAttr(
-              product.name
-            )}">
+container.innerHTML=
+cart.map(item=>{
 
-          <div class="cartInfo">
+const product=
+products.find(
+p=>Number(p.id)===Number(item.id)
+);
 
-            <strong>
-              ${escapeHtml(
-                product.name
-              )}
-            </strong>
+if(!product)return"";
 
-            <p>
-              Q${price.toFixed(2)}
-            </p>
+const quantity=
+Number(item.quantity||1);
 
-            <div class="quantity">
+const price=
+Number(product.price||0);
 
-              <button
-                onclick="changeQuantity(
-                  ${Number(product.id)},
-                  -1
-                )">
+const images=
+normalizeProductImages(product);
 
-                −
+return`
 
-              </button>
+<div class="cartItem">
 
-              <span>
-                ${quantity}
-              </span>
+<img
+src="${escapeAttr(images[0]||DEFAULT_HERO)}"
+alt="${escapeAttr(product.name)}">
 
-              <button
-                onclick="changeQuantity(
-                  ${Number(product.id)},
-                  1
-                )">
+<div class="cartInfo">
 
-                +
+<strong>
+${escapeHtml(product.name)}
+</strong>
 
-              </button>
+<p>
+Q${price.toFixed(2)}
+</p>
 
-              <button
-                onclick="removeCart(
-                  ${Number(product.id)}
-                )"
-                style="
-                  margin-left:10px;
-                  border:0;
-                  background:none;">
+<div class="quantity">
 
-                🗑️
+<button
+onclick="changeQuantity(${Number(product.id)},-1)">
+−
+</button>
 
-              </button>
+<span>
+${quantity}
+</span>
 
-            </div>
+<button
+onclick="changeQuantity(${Number(product.id)},1)">
++
+</button>
 
-          </div>
+<button
+onclick="removeCart(${Number(product.id)})"
+style="
+margin-left:10px;
+border:0;
+background:none;">
 
-        </div>
+🗑️
 
-      `;
+</button>
 
-    }).join("");
+</div>
 
-  saveAll();
+</div>
 
-  document.getElementById(
-    "cartTotal"
-  ).textContent =
-    "Q" +
-    total.toFixed(2);
+</div>
+
+`;
+
+}).join("");
+
+saveAll();
+
+document.getElementById("cartTotal").textContent=
+"Q"+total.toFixed(2);
+
 }
 
 
-function changeQuantity(
-  id,
-  amount
-){
+function changeQuantity(id,amount){
 
-  const item =
-    cart.find(
-      x =>
-        Number(x.id) === Number(id)
-    );
+const item=
+cart.find(
+x=>Number(x.id)===Number(id)
+);
 
-  if(!item)return;
+if(!item)return;
 
-  item.quantity =
-    Number(
-      item.quantity || 0
-    ) +
-    amount;
+item.quantity=
+Number(item.quantity||0)+amount;
 
-  if(item.quantity <= 0){
+if(item.quantity<=0){
 
-    cart =
-      cart.filter(
-        x =>
-          Number(x.id) !==
-          Number(id)
-      );
+cart=
+cart.filter(
+x=>Number(x.id)!==Number(id)
+);
 
-  }
+}
 
-  saveAll();
+saveAll();
 
-  updateCartCount();
+updateCartCount();
 
-  renderCart();
+renderCart();
+
 }
 
 
 function removeCart(id){
 
-  cart =
-    cart.filter(
-      x =>
-        Number(x.id) !==
-        Number(id)
-    );
+cart=
+cart.filter(
+x=>Number(x.id)!==Number(id)
+);
 
-  saveAll();
+saveAll();
 
-  updateCartCount();
+updateCartCount();
 
-  renderCart();
+renderCart();
+
 }
 
 
-/* ==========================================================
-   CHECKOUT
-========================================================== */
+/* CHECKOUT */
 
 function openCheckout(){
 
-  if(!cart.length){
+if(!cart.length){
 
-    showToast(
-      "Tu carrito está vacío."
-    );
+showToast("Tu carrito está vacío.");
 
-    return;
-  }
+return;
 
-  closeModal(
-    "cartModal"
-  );
+}
 
-  selectPayment("card");
+closeModal("cartModal");
 
-  openModal(
-    "checkoutModal"
-  );
+selectPayment("card");
+
+openModal("checkoutModal");
+
 }
 
 
 function selectPayment(method){
 
-  selectedPayment =
-    method;
+selectedPayment=method;
 
-  document
-    .querySelectorAll(
-      ".paymentMethod"
-    )
-    .forEach(
-      x =>
-        x.classList.remove(
-          "active"
-        )
-    );
+document
+.querySelectorAll(".paymentMethod")
+.forEach(x=>x.classList.remove("active"));
 
-  if(method === "card"){
+if(method==="card"){
 
-    document.getElementById(
-      "payCard"
-    ).classList.add("active");
+document.getElementById("payCard").classList.add("active");
 
-  }else if(
-    method === "deposit"
-  ){
+}else if(method==="deposit"){
 
-    document.getElementById(
-      "payDeposit"
-    ).classList.add("active");
+document.getElementById("payDeposit").classList.add("active");
 
-  }else{
+}else{
 
-    document.getElementById(
-      "payTransfer"
-    ).classList.add("active");
+document.getElementById("payTransfer").classList.add("active");
 
-  }
+}
 
-  const info =
-    document.getElementById(
-      "paymentInfo"
-    );
+const info=
+document.getElementById("paymentInfo");
 
-  if(method === "card"){
+if(method==="card"){
 
-    info.innerHTML = `
+info.innerHTML=`
 
-      <strong>
-        💳 Pago con tarjeta
-      </strong>
+<strong>💳 Pago con tarjeta</strong>
 
-      <p>
-        ${escapeHtml(
-          payments.card
-        )}
-      </p>
+<p>
+${escapeHtml(payments.card)}
+</p>
 
-    `;
+`;
 
-  }else if(
-    method === "deposit"
-  ){
+}else if(method==="deposit"){
 
-    info.innerHTML = `
+info.innerHTML=`
 
-      <strong>
-        📲 Depósito bancario
-      </strong>
+<strong>📲 Depósito bancario</strong>
 
-      <p>
-        ${escapeHtml(
-          payments.deposit
-        )}
-      </p>
+<p>
+${escapeHtml(payments.deposit)}
+</p>
 
-    `;
+`;
 
-  }else{
+}else{
 
-    info.innerHTML = `
+info.innerHTML=`
 
-      <strong>
-        🏦 Transferencia bancaria
-      </strong>
+<strong>🏦 Transferencia bancaria</strong>
 
-      <p>
-        ${escapeHtml(
-          payments.transfer
-        )}
-      </p>
+<p>
+${escapeHtml(payments.transfer)}
+</p>
 
-    `;
-  }
+`;
+
+}
+
 }
 
 
-/* ==========================================================
-   RECURRENTE
-========================================================== */
+/* RECURRENTE */
 
 function payRecurrente(){
 
-  if(!payments.recurrente){
+if(!payments.recurrente){
 
-    showToast(
-      "No hay enlace de Recurrente configurado."
-    );
+showToast(
+"No hay enlace de Recurrente configurado."
+);
 
-    return;
-  }
+return;
 
-  try{
+}
 
-    const url =
-      new URL(
-        payments.recurrente
-      );
+try{
 
-    if(
-      !/^https?:$/.test(
-        url.protocol
-      )
-    ){
+const url=new URL(payments.recurrente);
 
-      throw new Error(
-        "URL no válida"
-      );
+if(!/^https?:$/.test(url.protocol)){
 
-    }
+throw new Error();
 
-    window.open(
-      url.href,
-      "_blank",
-      "noopener,noreferrer"
-    );
+}
 
-  }catch(error){
+window.open(
+url.href,
+"_blank",
+"noopener,noreferrer"
+);
 
-    showToast(
-      "El enlace de Recurrente no es válido."
-    );
+}catch(error){
 
-  }
+showToast(
+"El enlace de Recurrente no es válido."
+);
+
+}
+
 }
 
 
-/* ==========================================================
-   PEDIDO
-========================================================== */
+/* PEDIDO */
 
 function sendOrder(){
 
-  const name =
-    document.getElementById(
-      "customerName"
-    ).value.trim();
+const name=
+document.getElementById("customerName").value.trim();
 
-  const phone =
-    document.getElementById(
-      "customerPhone"
-    ).value.trim();
+const phone=
+document.getElementById("customerPhone").value.trim();
 
-  const address =
-    document.getElementById(
-      "customerAddress"
-    ).value.trim();
+const address=
+document.getElementById("customerAddress").value.trim();
 
-  if(
-    !name ||
-    !phone ||
-    !address
-  ){
+if(!name||!phone||!address){
 
-    showToast(
-      "Completa tus datos para continuar."
-    );
+showToast(
+"Completa tus datos para continuar."
+);
 
-    return;
-  }
+return;
 
-  if(!cart.length){
+}
 
-    showToast(
-      "Tu carrito está vacío."
-    );
+if(!cart.length){
 
-    return;
-  }
+showToast(
+"Tu carrito está vacío."
+);
 
-  const order = {
+return;
 
-    name,
+}
 
-    phone,
+const order={
 
-    address,
+name,
 
-    payment:
-      selectedPayment,
+phone,
 
-    products:
-      cart.map(item=>({
+address,
 
-        id:item.id,
+payment:selectedPayment,
 
-        quantity:item.quantity
+products:cart.map(item=>({
 
-      })),
+id:item.id,
 
-    date:
-      new Date().toISOString()
+quantity:item.quantity
 
-  };
+})),
 
-  console.log(
-    "PEDIDO",
-    order
-  );
+date:new Date().toISOString()
 
-  showToast(
-    "Información del pedido preparada."
-  );
+};
+
+console.log("PEDIDO",order);
+
+showToast(
+"Información del pedido preparada."
+);
+
 }
 
 
-/* ==========================================================
-   GALERÍA
-========================================================== */
-
-function renderGallery(){
-
-  const container =
-    document.getElementById(
-      "gallery"
-    );
-
-  if(!gallery.length){
-
-    container.innerHTML =
-      "<p style='grid-column:1/-1;text-align:center;color:#777;'>La galería está vacía.</p>";
-
-    return;
-  }
-
-  container.innerHTML =
-    gallery.map(img=>`
-
-      <div class="galleryItem">
-
-        <img
-          src="${escapeAttr(img)}"
-          alt="Galería">
-
-      </div>
-
-    `).join("");
-}
-
-
-/* ==========================================================
-   ADMIN LOGIN
-========================================================== */
+/* ADMIN LOGIN */
 
 function openAdminLogin(){
 
-  document.getElementById(
-    "adminPassword"
-  ).value = "";
+document.getElementById("adminPassword").value="";
 
-  openModal(
-    "adminLoginModal"
-  );
+openModal("adminLoginModal");
+
 }
 
 
 function loginAdmin(){
 
-  const password =
-    document.getElementById(
-      "adminPassword"
-    ).value;
+const password=
+document.getElementById("adminPassword").value;
 
-  if(
-    password !==
-    ADMIN_PASSWORD
-  ){
+if(password!==ADMIN_PASSWORD){
 
-    showToast(
-      "Contraseña incorrecta."
-    );
+showToast("Contraseña incorrecta.");
 
-    return;
-  }
+return;
 
-  closeModal(
-    "adminLoginModal"
-  );
+}
 
-  loadAdminForms();
+closeModal("adminLoginModal");
 
-  renderAdminProducts();
+loadAdminForms();
 
-  renderAdminGallery();
+renderAdminProducts();
 
-  openModal(
-    "adminModal"
-  );
+openModal("adminModal");
+
 }
 
 
 function logoutAdmin(){
 
-  closeModal(
-    "adminModal"
-  );
+closeModal("adminModal");
+
 }
 
 
-/* ==========================================================
-   ADMIN TABS
-========================================================== */
+/* TABS */
 
-function adminTab(
-  name,
-  button
-){
+function adminTab(name,button){
 
-  document
-    .querySelectorAll(
-      ".adminSection"
-    )
-    .forEach(
-      x =>
-        x.classList.remove(
-          "active"
-        )
-    );
+document
+.querySelectorAll(".adminSection")
+.forEach(
+x=>x.classList.remove("active")
+);
 
-  document
-    .querySelectorAll(
-      ".adminTab"
-    )
-    .forEach(
-      x =>
-        x.classList.remove(
-          "active"
-        )
-    );
+document
+.querySelectorAll(".adminTab")
+.forEach(
+x=>x.classList.remove("active")
+);
 
-  const section =
-    document.getElementById(
-      "admin-" + name
-    );
+const section=
+document.getElementById("admin-"+name);
 
-  if(section){
+if(section){
 
-    section.classList.add(
-      "active"
-    );
+section.classList.add("active");
 
-  }
+}
 
-  if(button){
+if(button){
 
-    button.classList.add(
-      "active"
-    );
+button.classList.add("active");
 
-  }
+}
+
 }
 
 
-/* ==========================================================
-   ADMIN PRODUCTOS
-========================================================== */
+/* ADMIN PRODUCTOS */
 
 function renderAdminProducts(){
 
-  const container =
-    document.getElementById(
-      "adminProducts"
-    );
+const container=
+document.getElementById("adminProducts");
 
-  if(!products.length){
+if(!products.length){
 
-    container.innerHTML =
-      "<p style='color:#777;padding:20px 0;'>No hay productos.</p>";
+container.innerHTML=
+"<p style='color:#777;padding:20px 0;'>No hay productos.</p>";
 
-    return;
-  }
+return;
 
-  container.innerHTML =
-    products.map(product=>{
+}
 
-      const images =
-        normalizeProductImages(
-          product
-        );
+container.innerHTML=
+products.map(product=>{
 
-      return `
+const images=
+normalizeProductImages(product);
 
-        <div class="adminProduct">
+return`
 
-          <img
-            src="${escapeAttr(
-              images[0] ||
-              DEFAULT_HERO
-            )}"
-            alt="${escapeAttr(
-              product.name
-            )}">
+<div class="adminProduct">
 
-          <div class="adminProductInfo">
+<img
+src="${escapeAttr(images[0]||DEFAULT_HERO)}"
+alt="${escapeAttr(product.name)}">
 
-            <strong>
-              ${escapeHtml(
-                product.name || ""
-              )}
-            </strong>
 
-            <div>
-              Q${Number(
-                product.price || 0
-              ).toFixed(2)}
-            </div>
+<div class="adminProductInfo">
 
-            <div class="${
-              product.stock === "sold"
-              ? "statusSold"
-              : "statusAvailable"
-            }">
+<strong>
+${escapeHtml(product.name||"")}
+</strong>
 
-              ${
-                product.stock === "sold"
-                ? "🔴 AGOTADO"
-                : "🟢 DISPONIBLE"
-              }
+<div>
+Material:
+${escapeHtml(product.material||"No especificado")}
+</div>
 
-            </div>
+<div>
+Q${Number(product.price||0).toFixed(2)}
+</div>
 
-            <div style="
-              font-size:10px;
-              color:#777;
-              margin-top:4px;">
+<div class="${
+product.stock==="sold"
+?"statusSold"
+:"statusAvailable"
+}">
 
-              📸 ${images.length}
-              ${
-                images.length === 1
-                ? "foto"
-                : "fotos"
-              }
+${
+product.stock==="sold"
+?"🔴 AGOTADO"
+:"🟢 DISPONIBLE"
+}
 
-            </div>
+</div>
 
-          </div>
+<div style="
+font-size:10px;
+color:#777;
+margin-top:4px;">
 
-          <div class="adminActions">
+📸 ${images.length}
+${images.length===1?"foto":"fotos"}
 
-            <button
-              onclick="editProduct(
-                ${Number(product.id)}
-              )">
+</div>
 
-              ✏️
+</div>
 
-            </button>
 
-            <button
-              onclick="toggleStock(
-                ${Number(product.id)}
-              )">
+<div class="adminActions">
 
-              ${
-                product.stock === "sold"
-                ? "🟢"
-                : "🔴"
-              }
+<button
+onclick="editProduct(${Number(product.id)})">
+✏️
+</button>
 
-            </button>
+<button
+onclick="toggleStock(${Number(product.id)})">
 
-            <button
-              onclick="deleteProduct(
-                ${Number(product.id)}
-              )">
+${
+product.stock==="sold"
+?"🟢"
+:"🔴"
+}
 
-              🗑️
+</button>
 
-            </button>
+<button
+onclick="deleteProduct(${Number(product.id)})">
 
-          </div>
+🗑️
 
-        </div>
+</button>
 
-      `;
+</div>
 
-    }).join("");
+</div>
+
+`;
+
+}).join("");
+
 }
 
 
-/* ==========================================================
-   NUEVO PRODUCTO
-========================================================== */
+/* NUEVO */
 
 function newProduct(){
 
-  document.getElementById(
-    "editProductId"
-  ).value = "";
+document.getElementById("editProductId").value="";
 
-  document.getElementById(
-    "productName"
-  ).value = "";
+document.getElementById("productName").value="";
 
-  document.getElementById(
-    "productPrice"
-  ).value = "";
+document.getElementById("productMaterial").value="";
 
-  document.getElementById(
-    "productCategory"
-  ).value = "";
+document.getElementById("productPrice").value="";
 
-  document.getElementById(
-    "productDescription"
-  ).value = "";
+document.getElementById("productDescription").value="";
 
-  document.getElementById(
-    "productSpecifications"
-  ).value = "";
+document.getElementById("productSpecifications").value="";
 
-  document.getElementById(
-    "productStock"
-  ).value = "available";
+document.getElementById("productStock").value="available";
 
-  document.getElementById(
-    "productImages"
-  ).value = "";
+document.getElementById("productImages").value="";
 
-  renderEditorImages([]);
+renderEditorImages([]);
 
-  openModal(
-    "productEditor"
-  );
+openModal("productEditor");
+
 }
 
 
-/* ==========================================================
-   EDITAR PRODUCTO
-========================================================== */
+/* EDITAR */
 
 function editProduct(id){
 
-  const product =
-    products.find(
-      p =>
-        Number(p.id) ===
-        Number(id)
-    );
+const product=
+products.find(
+p=>Number(p.id)===Number(id)
+);
 
-  if(!product)return;
+if(!product)return;
 
-  document.getElementById(
-    "editProductId"
-  ).value =
-    product.id;
+document.getElementById("editProductId").value=
+product.id;
 
-  document.getElementById(
-    "productName"
-  ).value =
-    product.name || "";
+document.getElementById("productName").value=
+product.name||"";
 
-  document.getElementById(
-    "productPrice"
-  ).value =
-    product.price || "";
+document.getElementById("productMaterial").value=
+product.material||"";
 
-  document.getElementById(
-    "productCategory"
-  ).value =
-    product.category || "";
+document.getElementById("productPrice").value=
+product.price||"";
 
-  document.getElementById(
-    "productDescription"
-  ).value =
-    product.description || "";
+document.getElementById("productDescription").value=
+product.description||"";
 
-  document.getElementById(
-    "productSpecifications"
-  ).value =
-    product.specifications || "";
+document.getElementById("productSpecifications").value=
+product.specifications||"";
 
-  document.getElementById(
-    "productStock"
-  ).value =
-    product.stock ||
-    "available";
+document.getElementById("productStock").value=
+product.stock||"available";
 
-  document.getElementById(
-    "productImages"
-  ).value = "";
+document.getElementById("productImages").value="";
 
-  renderEditorImages(
-    normalizeProductImages(
-      product
-    )
-  );
+renderEditorImages(
+normalizeProductImages(product)
+);
 
-  openModal(
-    "productEditor"
-  );
+openModal("productEditor");
+
 }
 
 
-/* ==========================================================
-   MOSTRAR FOTOS DEL PRODUCTO
-========================================================== */
+/* FOTOS */
 
 function renderEditorImages(images){
 
-  const container =
-    document.getElementById(
-      "productImageManager"
-    );
+const container=
+document.getElementById("productImageManager");
 
-  const count =
-    document.getElementById(
-      "productImageCount"
-    );
+const count=
+document.getElementById("productImageCount");
 
-  const safeImages =
-    Array.isArray(images)
-    ? images.filter(Boolean)
-    : [];
+const safeImages=
+Array.isArray(images)
+?images.filter(Boolean)
+:[];
 
-  count.textContent =
-    safeImages.length +
-    (
-      safeImages.length === 1
-      ? " fotografía"
-      : " fotografías"
-    );
+count.textContent=
+safeImages.length+
+(
+safeImages.length===1
+?" fotografía"
+:" fotografías"
+);
 
-  if(!safeImages.length){
+if(!safeImages.length){
 
-    container.innerHTML = `
+container.innerHTML=`
 
-      <div style="
-        grid-column:1/-1;
-        padding:20px;
-        text-align:center;
-        color:#777;
-        border:1px dashed #ccc;">
+<div style="
+grid-column:1/-1;
+padding:20px;
+text-align:center;
+color:#777;
+border:1px dashed #ccc;">
 
-        No hay fotografías todavía.
+No hay fotografías todavía.
 
-      </div>
+</div>
 
-    `;
+`;
 
-    return;
-  }
+return;
 
-  container.innerHTML =
-    safeImages.map(
-      (img,index)=>`
-
-        <div class="productImageItem">
-
-          ${
-            index === 0
-            ? `
-              <div class="productImageMain">
-                FOTO PRINCIPAL
-              </div>
-            `
-            : ""
-          }
-
-          <img
-            src="${escapeAttr(img)}"
-            alt="Foto ${index+1}">
-
-          <button
-            type="button"
-            onclick="removeProductImage(${index})">
-
-            🗑️ ELIMINAR
-
-          </button>
-
-        </div>
-
-      `
-    ).join("");
 }
 
+container.innerHTML=
+safeImages.map(
+(img,index)=>`
 
-/* ==========================================================
-   ELIMINAR FOTO INDIVIDUAL
-========================================================== */
+<div class="productImageItem">
+
+${
+index===0
+?`
+<div class="productImageMain">
+FOTO PRINCIPAL
+</div>
+`
+:""
+}
+
+<img
+src="${escapeAttr(img)}"
+alt="Foto ${index+1}">
+
+<button
+type="button"
+onclick="removeProductImage(${index})">
+
+🗑️ ELIMINAR
+
+</button>
+
+</div>
+
+`
+).join("");
+
+}
+
 
 function removeProductImage(index){
 
-  const id =
-    document.getElementById(
-      "editProductId"
-    ).value;
+const id=
+document.getElementById("editProductId").value;
 
-  if(!id){
+if(!id){
 
-    showToast(
-      "Primero guarda el producto."
-    );
+showToast(
+"Primero guarda el producto."
+);
 
-    return;
-  }
+return;
 
-  const product =
-    products.find(
-      p =>
-        Number(p.id) ===
-        Number(id)
-    );
+}
 
-  if(!product)return;
+const product=
+products.find(
+p=>Number(p.id)===Number(id)
+);
 
-  let images =
-    normalizeProductImages(
-      product
-    );
+if(!product)return;
 
-  if(images.length <= 1){
+let images=
+normalizeProductImages(product);
 
-    showToast(
-      "El producto debe conservar al menos una foto."
-    );
+if(images.length<=1){
 
-    return;
-  }
+showToast(
+"El producto debe conservar al menos una foto."
+);
 
-  if(
-    !confirm(
-      "¿Eliminar esta fotografía?"
-    )
-  ){
+return;
 
-    return;
-  }
+}
 
-  images.splice(
-    index,
-    1
-  );
+if(!confirm("¿Eliminar esta fotografía?")){
 
-  product.images =
-    images;
+return;
 
-  saveAll();
+}
 
-  renderEditorImages(
-    images
-  );
+images.splice(index,1);
 
-  renderProducts();
+product.images=images;
 
-  renderAdminProducts();
+saveAll();
 
-  showToast(
-    "Fotografía eliminada."
-  );
+renderEditorImages(images);
+
+renderProducts();
+
+renderAdminProducts();
+
+showToast("Fotografía eliminada.");
+
 }
 
 
-/* ==========================================================
-   GUARDAR PRODUCTO
-========================================================== */
+/* GUARDAR PRODUCTO */
 
 async function saveProduct(){
 
-  const id =
-    document.getElementById(
-      "editProductId"
-    ).value;
+const id=
+document.getElementById("editProductId").value;
 
-  const name =
-    document.getElementById(
-      "productName"
-    ).value.trim();
+const name=
+document.getElementById("productName").value.trim();
 
-  const price =
-    Number(
-      document.getElementById(
-        "productPrice"
-      ).value
-    );
+const material=
+document.getElementById("productMaterial").value.trim();
 
-  const category =
-    document.getElementById(
-      "productCategory"
-    ).value.trim();
+const price=
+Number(document.getElementById("productPrice").value);
 
-  const description =
-    document.getElementById(
-      "productDescription"
-    ).value.trim();
+const description=
+document.getElementById("productDescription").value.trim();
 
-  const specifications =
-    document.getElementById(
-      "productSpecifications"
-    ).value.trim();
+const specifications=
+document.getElementById("productSpecifications").value.trim();
 
-  const stock =
-    document.getElementById(
-      "productStock"
-    ).value;
+const stock=
+document.getElementById("productStock").value;
 
-  const files =
-    [
-      ...document
-        .getElementById(
-          "productImages"
-        )
-        .files
-    ];
+const files=[
+...document.getElementById("productImages").files
+];
 
-  if(
-    !name ||
-    !Number.isFinite(price) ||
-    price < 0 ||
-    !category
-  ){
+if(
+!name||
+!material||
+!Number.isFinite(price)||
+price<0
+){
 
-    showToast(
-      "Completa nombre, precio y categoría."
-    );
+showToast(
+"Completa nombre, material y precio."
+);
 
-    return;
-  }
+return;
 
-
-  /* ========================================================
-     EDITAR PRODUCTO EXISTENTE
-  ======================================================== */
-
-  if(id){
-
-    const product =
-      products.find(
-        p =>
-          Number(p.id) ===
-          Number(id)
-      );
-
-    if(!product)return;
-
-    let existingImages =
-      normalizeProductImages(
-        product
-      );
-
-    let newImages = [];
-
-    if(files.length){
-
-      try{
-
-        newImages =
-          await filesToDataURL(
-            files
-          );
-
-      }catch(error){
-
-        console.error(error);
-
-        showToast(
-          "No se pudieron cargar las imágenes."
-        );
-
-        return;
-      }
-    }
-
-    /*
-      AQUÍ ESTÁ EL CAMBIO IMPORTANTE:
-
-      Las fotos nuevas se AGREGAN a las
-      fotos existentes.
-    */
-
-    existingImages =
-      existingImages.concat(
-        newImages
-      );
-
-    product.name =
-      name;
-
-    product.price =
-      price;
-
-    product.category =
-      category;
-
-    product.description =
-      description;
-
-    product.specifications =
-      specifications;
-
-    product.stock =
-      stock;
-
-    product.images =
-      existingImages.length
-      ? existingImages
-      : [DEFAULT_HERO];
-
-
-  }else{
-
-
-    /* ======================================================
-       CREAR PRODUCTO NUEVO
-    ====================================================== */
-
-    let images = [];
-
-    if(files.length){
-
-      try{
-
-        images =
-          await filesToDataURL(
-            files
-          );
-
-      }catch(error){
-
-        console.error(error);
-
-        showToast(
-          "No se pudieron cargar las imágenes."
-        );
-
-        return;
-      }
-    }
-
-    products.push({
-
-      id:
-        Date.now(),
-
-      name,
-
-      price,
-
-      category,
-
-      description,
-
-      specifications,
-
-      stock,
-
-      images:
-        images.length
-        ? images
-        : [DEFAULT_HERO]
-
-    });
-
-  }
-
-
-  saveAll();
-
-  renderCategories();
-
-  renderProducts();
-
-  renderAdminProducts();
-
-  closeModal(
-    "productEditor"
-  );
-
-  showToast(
-    "Producto guardado correctamente."
-  );
 }
 
 
-/* ==========================================================
-   CAMBIAR DISPONIBILIDAD
-========================================================== */
+if(id){
+
+const product=
+products.find(
+p=>Number(p.id)===Number(id)
+);
+
+if(!product)return;
+
+let existingImages=
+normalizeProductImages(product);
+
+let newImages=[];
+
+if(files.length){
+
+try{
+
+newImages=
+await filesToDataURL(files);
+
+}catch(error){
+
+showToast(
+"No se pudieron cargar las imágenes."
+);
+
+return;
+
+}
+
+}
+
+existingImages=
+existingImages.concat(newImages);
+
+product.name=name;
+
+product.material=material;
+
+product.price=price;
+
+product.description=description;
+
+product.specifications=specifications;
+
+product.stock=stock;
+
+product.images=
+existingImages.length
+?existingImages
+:[DEFAULT_HERO];
+
+}else{
+
+let images=[];
+
+if(files.length){
+
+try{
+
+images=
+await filesToDataURL(files);
+
+}catch(error){
+
+showToast(
+"No se pudieron cargar las imágenes."
+);
+
+return;
+
+}
+
+}
+
+products.push({
+
+id:Date.now(),
+
+name:name,
+
+material:material,
+
+price:price,
+
+description:description,
+
+specifications:specifications,
+
+stock:stock,
+
+images:
+images.length
+?images
+:[DEFAULT_HERO]
+
+});
+
+}
+
+
+saveAll();
+
+renderProducts();
+
+renderAdminProducts();
+
+closeModal("productEditor");
+
+showToast(
+"Producto guardado correctamente."
+);
+
+}
+
+
+/* DISPONIBILIDAD */
 
 function toggleStock(id){
 
-  const product =
-    products.find(
-      p =>
-        Number(p.id) ===
-        Number(id)
-    );
+const product=
+products.find(
+p=>Number(p.id)===Number(id)
+);
 
-  if(!product)return;
+if(!product)return;
 
-  product.stock =
-    product.stock === "sold"
-    ? "available"
-    : "sold";
+product.stock=
+product.stock==="sold"
+?"available"
+:"sold";
 
-  saveAll();
+saveAll();
 
-  renderProducts();
+renderProducts();
 
-  renderAdminProducts();
+renderAdminProducts();
 
-  showToast(
-    product.stock === "sold"
-    ? "Producto agotado."
-    : "Producto disponible."
-  );
+showToast(
+product.stock==="sold"
+?"Producto agotado."
+:"Producto disponible."
+);
+
 }
 
 
-/* ==========================================================
-   ELIMINAR PRODUCTO
-========================================================== */
+/* ELIMINAR */
 
 function deleteProduct(id){
 
-  if(
-    !confirm(
-      "¿Eliminar este producto?"
-    )
-  ){
+if(!confirm("¿Eliminar este producto?")){
 
-    return;
-  }
+return;
 
-  products =
-    products.filter(
-      p =>
-        Number(p.id) !==
-        Number(id)
-    );
+}
 
-  cart =
-    cart.filter(
-      x =>
-        Number(x.id) !==
-        Number(id)
-    );
+products=
+products.filter(
+p=>Number(p.id)!==Number(id)
+);
 
-  saveAll();
+cart=
+cart.filter(
+x=>Number(x.id)!==Number(id)
+);
 
-  renderProducts();
+saveAll();
 
-  renderCategories();
+renderProducts();
 
-  renderAdminProducts();
+renderAdminProducts();
 
-  updateCartCount();
+updateCartCount();
 
-  showToast(
-    "Producto eliminado."
-  );
+showToast(
+"Producto eliminado."
+);
+
 }
 
 
-/* ==========================================================
-   ADMIN GALERÍA
-========================================================== */
-
-async function uploadGallery(){
-
-  const input =
-    document.getElementById(
-      "galleryFiles"
-    );
-
-  const files =
-    [...input.files];
-
-  if(!files.length){
-
-    showToast(
-      "Selecciona imágenes."
-    );
-
-    return;
-  }
-
-  try{
-
-    const images =
-      await filesToDataURL(
-        files
-      );
-
-    gallery.push(
-      ...images
-    );
-
-    saveAll();
-
-    renderGallery();
-
-    renderAdminGallery();
-
-    input.value = "";
-
-    showToast(
-      "Galería actualizada."
-    );
-
-  }catch(error){
-
-    console.error(error);
-
-    showToast(
-      "No se pudieron cargar las imágenes."
-    );
-  }
-}
-
-
-function renderAdminGallery(){
-
-  const container =
-    document.getElementById(
-      "adminGallery"
-    );
-
-  if(!gallery.length){
-
-    container.innerHTML =
-      "<p style='color:#777;padding:20px 0;'>No hay fotografías.</p>";
-
-    return;
-  }
-
-  container.innerHTML =
-    gallery.map(
-      (img,index)=>`
-
-        <div class="adminGalleryItem">
-
-          <img
-            src="${escapeAttr(img)}"
-            alt="Fotografía ${index+1}">
-
-          <div>
-            Fotografía ${index+1}
-          </div>
-
-          <button
-            onclick="deleteGallery(${index})"
-            style="
-              border:1px solid #ddd;
-              background:#fff;
-              padding:8px;">
-
-            🗑️
-
-          </button>
-
-        </div>
-
-      `
-    ).join("");
-}
-
-
-function deleteGallery(index){
-
-  if(
-    !confirm(
-      "¿Eliminar esta fotografía?"
-    )
-  ){
-
-    return;
-  }
-
-  gallery.splice(
-    index,
-    1
-  );
-
-  saveAll();
-
-  renderGallery();
-
-  renderAdminGallery();
-}
-
-
-/* ==========================================================
-   ADMIN FORMULARIOS
-========================================================== */
+/* ADMIN FORMS */
 
 function loadAdminForms(){
 
-  document.getElementById(
-    "setBrand"
-  ).value =
-    settings.brand ||
-    "NyxFsm";
+document.getElementById("setBrand").value=
+settings.brand||"NyxFsm";
 
-  document.getElementById(
-    "setHeroTitle"
-  ).value =
-    settings.heroTitle ||
-    "NyxFsm";
+document.getElementById("setHeroTitle").value=
+settings.heroTitle||"NyxFsm";
 
-  document.getElementById(
-    "setHeroText"
-  ).value =
-    settings.heroText ||
-    "";
+document.getElementById("setHeroText").value=
+settings.heroText||"";
 
-  document.getElementById(
-    "setPromoText"
-  ).value =
-    settings.promoText ||
-    "";
+document.getElementById("setPromoText").value=
+settings.promoText||"";
 
-  document.getElementById(
-    "setInstagram"
-  ).value =
-    settings.instagram ||
-    "";
+document.getElementById("setInstagram").value=
+settings.instagram||"";
 
-  document.getElementById(
-    "setTikTok"
-  ).value =
-    settings.tiktok ||
-    "";
+document.getElementById("setTikTok").value=
+settings.tiktok||"";
 
-  document.getElementById(
-    "setContact"
-  ).value =
-    settings.contact ||
-    "";
+document.getElementById("setContact").value=
+settings.contact||"";
 
-  document.getElementById(
-    "setShippingTop"
-  ).value =
-    shipping.top ||
-    "";
+document.getElementById("heroBackgroundUrl").value=
+settings.heroBackground||"";
 
-  document.getElementById(
-    "setZones"
-  ).value =
-    shipping.zones ||
-    "";
+document.getElementById("setShippingTop").value=
+shipping.top||"";
 
-  document.getElementById(
-    "setShippingCost"
-  ).value =
-    shipping.cost ||
-    "";
+document.getElementById("setZones").value=
+shipping.zones||"";
 
-  document.getElementById(
-    "setShippingTime"
-  ).value =
-    shipping.time ||
-    "";
+document.getElementById("setShippingCost").value=
+shipping.cost||"";
 
-  document.getElementById(
-    "setRecurrente"
-  ).value =
-    payments.recurrente ||
-    "";
+document.getElementById("setShippingTime").value=
+shipping.time||"";
 
-  document.getElementById(
-    "setCardInstructions"
-  ).value =
-    payments.card ||
-    "";
+document.getElementById("setRecurrente").value=
+payments.recurrente||"";
 
-  document.getElementById(
-    "setDepositInstructions"
-  ).value =
-    payments.deposit ||
-    "";
+document.getElementById("setCardInstructions").value=
+payments.card||"";
 
-  document.getElementById(
-    "setTransferInstructions"
-  ).value =
-    payments.transfer ||
-    "";
+document.getElementById("setDepositInstructions").value=
+payments.deposit||"";
 
-  document.getElementById(
-    "heroBackgroundUrl"
-  ).value =
-    settings.heroBackground ||
-    "";
+document.getElementById("setTransferInstructions").value=
+payments.transfer||"";
+
 }
 
 
-/* ==========================================================
-   GUARDAR DISEÑO
-========================================================== */
+/* INICIO */
 
-async function saveDesign(){
+async function saveInicio(){
 
-  settings.brand =
-    document.getElementById(
-      "setBrand"
-    ).value.trim() ||
-    "NyxFsm";
+settings.heroTitle=
+document.getElementById("setHeroTitle").value.trim()||
+settings.brand;
 
-  settings.heroTitle =
-    document.getElementById(
-      "setHeroTitle"
-    ).value.trim() ||
-    settings.brand;
+settings.heroText=
+document.getElementById("setHeroText").value.trim();
 
-  settings.heroText =
-    document.getElementById(
-      "setHeroText"
-    ).value.trim();
+settings.promoText=
+document.getElementById("setPromoText").value.trim();
 
-  settings.promoText =
-    document.getElementById(
-      "setPromoText"
-    ).value.trim();
+const url=
+document.getElementById("heroBackgroundUrl").value.trim();
 
-  settings.instagram =
-    document.getElementById(
-      "setInstagram"
-    ).value.trim();
+if(url){
 
-  settings.tiktok =
-    document.getElementById(
-      "setTikTok"
-    ).value.trim();
+settings.heroBackground=url;
 
-  settings.contact =
-    document.getElementById(
-      "setContact"
-    ).value.trim();
+}
 
-  const url =
-    document.getElementById(
-      "heroBackgroundUrl"
-    ).value.trim();
+const file=
+document.getElementById("heroBackground").files[0];
 
-  if(url){
+if(file){
 
-    settings.heroBackground =
-      url;
+try{
 
-  }
+const result=
+await filesToDataURL([file]);
 
-  const file =
-    document.getElementById(
-      "heroBackground"
-    ).files[0];
+settings.heroBackground=result[0];
 
-  if(file){
+}catch(error){
 
-    try{
+showToast(
+"No se pudo cargar el fondo."
+);
 
-      const result =
-        await filesToDataURL(
-          [file]
-        );
+return;
 
-      settings.heroBackground =
-        result[0];
+}
 
-    }catch(error){
+}
 
-      showToast(
-        "No se pudo cargar el fondo."
-      );
+saveAll();
 
-      return;
-    }
-  }
+applySettings();
 
-  saveAll();
+showToast(
+"Inicio actualizado."
+);
 
-  applySettings();
-
-  showToast(
-    "Diseño actualizado."
-  );
 }
 
 
-/* ==========================================================
-   GUARDAR ENVÍOS
-========================================================== */
+/* CONFIGURACIÓN */
+
+function saveConfig(){
+
+settings.brand=
+document.getElementById("setBrand").value.trim()||
+"NyxFsm";
+
+settings.instagram=
+document.getElementById("setInstagram").value.trim();
+
+settings.tiktok=
+document.getElementById("setTikTok").value.trim();
+
+settings.contact=
+document.getElementById("setContact").value.trim();
+
+saveAll();
+
+applySettings();
+
+showToast(
+"Configuración actualizada."
+);
+
+}
+
+
+/* ENVIOS */
 
 function saveShipping(){
 
-  shipping.top =
-    document.getElementById(
-      "setShippingTop"
-    ).value.trim();
+shipping.top=
+document.getElementById("setShippingTop").value.trim();
 
-  shipping.zones =
-    document.getElementById(
-      "setZones"
-    ).value.trim();
+shipping.zones=
+document.getElementById("setZones").value.trim();
 
-  shipping.cost =
-    document.getElementById(
-      "setShippingCost"
-    ).value.trim();
+shipping.cost=
+document.getElementById("setShippingCost").value.trim();
 
-  shipping.time =
-    document.getElementById(
-      "setShippingTime"
-    ).value.trim();
+shipping.time=
+document.getElementById("setShippingTime").value.trim();
 
-  saveAll();
+saveAll();
 
-  applySettings();
+applySettings();
 
-  showToast(
-    "Información de envíos actualizada."
-  );
+showToast(
+"Información de envíos actualizada."
+);
+
 }
 
 
-/* ==========================================================
-   GUARDAR PAGOS
-========================================================== */
+/* PAGOS */
 
 function savePayments(){
 
-  payments.recurrente =
-    document.getElementById(
-      "setRecurrente"
-    ).value.trim();
+payments.recurrente=
+document.getElementById("setRecurrente").value.trim();
 
-  payments.card =
-    document.getElementById(
-      "setCardInstructions"
-    ).value.trim();
+payments.card=
+document.getElementById("setCardInstructions").value.trim();
 
-  payments.deposit =
-    document.getElementById(
-      "setDepositInstructions"
-    ).value.trim();
+payments.deposit=
+document.getElementById("setDepositInstructions").value.trim();
 
-  payments.transfer =
-    document.getElementById(
-      "setTransferInstructions"
-    ).value.trim();
+payments.transfer=
+document.getElementById("setTransferInstructions").value.trim();
 
-  saveAll();
+saveAll();
 
-  applySettings();
+applySettings();
 
-  selectPayment(
-    selectedPayment
-  );
+selectPayment(selectedPayment);
 
-  showToast(
-    "Métodos de pago actualizados."
-  );
+showToast(
+"Métodos de pago actualizados."
+);
+
 }
 
 
-/* ==========================================================
-   ARCHIVOS
-========================================================== */
+/* ARCHIVOS */
 
 function filesToDataURL(files){
 
-  return Promise.all(
+return Promise.all(
 
-    files.map(file=>{
+files.map(file=>{
 
-      return new Promise(
-        (resolve,reject)=>{
+return new Promise(
+(resolve,reject)=>{
 
-          if(
-            !file.type.startsWith(
-              "image/"
-            )
-          ){
+if(!file.type.startsWith("image/")){
 
-            reject(
-              new Error(
-                "Archivo no válido"
-              )
-            );
+reject(
+new Error("Archivo no válido")
+);
 
-            return;
-          }
+return;
 
-          const reader =
-            new FileReader();
+}
 
-          reader.onload =
-            e =>
-              resolve(
-                e.target.result
-              );
+const reader=new FileReader();
 
-          reader.onerror =
-            () =>
-              reject(
-                new Error(
-                  "No se pudo leer el archivo"
-                )
-              );
+reader.onload=
+e=>resolve(e.target.result);
 
-          reader.readAsDataURL(
-            file
-          );
+reader.onerror=
+()=>reject(
+new Error("No se pudo leer el archivo")
+);
 
-        }
-      );
+reader.readAsDataURL(file);
 
-    })
+}
+);
 
-  );
+})
+
+);
+
 }
 
 
-/* ==========================================================
-   MODALES
-========================================================== */
+/* MODALES */
 
 function openModal(id){
 
-  const modal =
-    document.getElementById(
-      id
-    );
+const modal=
+document.getElementById(id);
 
-  if(modal){
+if(modal){
 
-    modal.classList.add(
-      "open"
-    );
+modal.classList.add("open");
 
-  }
+}
+
 }
 
 
 function closeModal(id){
 
-  const modal =
-    document.getElementById(
-      id
-    );
+const modal=
+document.getElementById(id);
 
-  if(modal){
+if(modal){
 
-    modal.classList.remove(
-      "open"
-    );
+modal.classList.remove("open");
 
-  }
+}
+
 }
 
 
-/* ==========================================================
-   TOAST
-========================================================== */
+/* TOAST */
 
 let toastTimer;
 
 function showToast(message){
 
-  const toast =
-    document.getElementById(
-      "toast"
-    );
+const toast=
+document.getElementById("toast");
 
-  if(!toast)return;
+if(!toast)return;
 
-  toast.textContent =
-    message;
+toast.textContent=message;
 
-  toast.classList.add(
-    "show"
-  );
+toast.classList.add("show");
 
-  clearTimeout(
-    toastTimer
-  );
+clearTimeout(toastTimer);
 
-  toastTimer =
-    setTimeout(
-      ()=>{
-        toast.classList.remove(
-          "show"
-        );
-      },
-      2500
-    );
+toastTimer=
+setTimeout(
+()=>{
+toast.classList.remove("show");
+},
+2500
+);
+
 }
 
 
-/* ==========================================================
-   SEGURIDAD DE TEXTO
-========================================================== */
+/* SEGURIDAD */
 
 function escapeHtml(value){
 
-  return String(
-    value ?? ""
-  )
-  .replace(
-    /&/g,
-    "&amp;"
-  )
-  .replace(
-    /</g,
-    "&lt;"
-  )
-  .replace(
-    />/g,
-    "&gt;"
-  )
-  .replace(
-    /"/g,
-    "&quot;"
-  )
-  .replace(
-    /'/g,
-    "&#039;"
-  );
+return String(value??"")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
 }
 
 
 function escapeAttr(value){
 
-  return escapeHtml(
-    value
-  );
+return escapeHtml(value);
+
 }
 
 
-/* ==========================================================
-   CERRAR MODAL AL HACER CLICK AFUERA
-========================================================== */
+/* CERRAR MODAL */
 
 document
-  .querySelectorAll(".modal")
-  .forEach(
-    modal=>{
+.querySelectorAll(".modal")
+.forEach(modal=>{
 
-      modal.addEventListener(
-        "click",
-        e=>{
+modal.addEventListener("click",e=>{
 
-          if(
-            e.target === modal
-          ){
+if(e.target===modal){
 
-            modal.classList.remove(
-              "open"
-            );
+modal.classList.remove("open");
 
-          }
+}
 
-        }
-      );
+});
 
-    }
-  );
+});
 
 
-/* ==========================================================
-   ESC PARA CERRAR MODALES
-========================================================== */
+document.addEventListener("keydown",e=>{
 
-document.addEventListener(
-  "keydown",
-  e=>{
+if(e.key==="Escape"){
 
-    if(
-      e.key === "Escape"
-    ){
+document
+.querySelectorAll(".modal.open")
+.forEach(modal=>{
 
-      document
-        .querySelectorAll(
-          ".modal.open"
-        )
-        .forEach(
-          modal=>{
-            modal.classList.remove(
-              "open"
-            );
-          }
-        );
+modal.classList.remove("open");
 
-    }
+});
 
-  }
-);
+}
+
+});
 
 
-/* ==========================================================
-   ENTER EN LOGIN
-========================================================== */
+document.addEventListener("keydown",e=>{
 
-document.addEventListener(
-  "keydown",
-  e=>{
+if(
+e.key==="Enter"&&
+document.activeElement?.id==="adminPassword"
+){
 
-    if(
-      e.key === "Enter" &&
-      document.activeElement?.id ===
-      "adminPassword"
-    ){
+loginAdmin();
 
-      loginAdmin();
+}
 
-    }
-
-  }
-);
-
-
-/* ==========================================================
-   FIN DEL JAVASCRIPT
-========================================================== */
+});
 
 </script>
 
